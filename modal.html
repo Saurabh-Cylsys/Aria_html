@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/donautchard.css" />
+    <!-- <link rel="stylesheet" href="css/donautchard2.css" /> -->
+    <link rel="stylesheet" href="css/sidebar-rgt.css" />
+    <link rel="stylesheet" href="css/tooltip.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/table_donut.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+
+    <style>
+      .add-modal-body {
+        padding: 100px 318px;
+      }
+      .add_widget1,
+      .add_widget2,
+      .add_widget3,
+      .add_widget4 {
+        padding: 0;
+      }
+      .add_widget1 .modal-content {
+        background: #77bc1f;
+        color: #fff;
+        border: 1px solid #77bc1f;
+      }
+
+      .add_widget2 .modal-content {
+        background: #d9391d;
+        color: #fff;
+        border: 1px solid #77bc1f;
+      }
+
+      .add_widget3 .modal-content {
+        background: #d17d00;
+        color: #fff;
+        border: 1px solid #77bc1f;
+      }
+
+      .add_widget1 .modal-body,
+      .add_widget2 .modal-body,
+      .add_widget3 .modal-body {
+        background: url(img/add360.svg) no-repeat;
+        background-size: 100%;
+      }
+
+      .border-hr hr {
+        background-color: #fff;
+        height: 6px;
+      }
+
+      /* .green-btn {
+        color: #d17d00;
+        background: #ffffff;
+        border: 0.724008px solid #ffffff;
+        box-sizing: border-box;
+      } */
+      .red-btn {
+        color: #d9391d;
+        background: #ffffff;
+        border: 0.724008px solid #ffffff;
+        box-sizing: border-box;
+      }
+      .orange-btn {
+        color: #d17d00;
+        background: #ffffff;
+        border: 0.724008px solid #ffffff;
+        box-sizing: border-box;
+      }
+
+      .mbtn-close {
+        float: right;
+        cursor: pointer;
+      }
+      .cancel-btn {
+        border: 0.539989px solid #fff;
+        box-sizing: border-box;
+        border-radius: 2.98333px;
+        outline: none;
+        box-shadow: none;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 11.8798px;
+        line-height: 16px;
+        text-align: center;
+        color: #fff;
+      }
+
+      @media (max-width: 1024px) {
+        .add-modal-body {
+          padding: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        .add-modal-body {
+          padding: 0;
+        }
+      }
+      @media (max-width: 600px) {
+        .add-modal-body {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- customize widget modal start -->
+    <div
+      class="modal fade add_widget1"
+      id="green"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="col-md-12">
+                <img
+                  class="mbtn-close"
+                  src="img/Close.svg"
+                  alt=""
+                  data-dismiss="modal"
+                />
+              </div>
+              <div class="add-modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img class="imark" src="img/i-mark-green.svg" alt="" />
+                  </div>
+                  <div class="col-md-12">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      SAVING CHANGES...
+                    </h5>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <p class="specify_name">
+                      Specify a name for this 360 View Dashboard
+                    </p>
+                  </div> -->
+                  <div class="col-md-12">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group mt-5 border-hr">
+                            <!-- <input
+                              type="text"
+                              class="dashboard_name"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter dashboard name here..."
+                            /> -->
+                            <hr />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <p class="view_d">
+                            Your new AZT Password is being saved. You will be
+                            prompted to login with your new password as soon as
+                            the password change is saved.
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 sub-btn"
+                            data-dismiss="modal"
+                          >
+                            CANCEL
+                          </button>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 cancel-btn"
+                            disabled
+                          >
+                            HELP
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade add_widget2"
+      id="red"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="col-md-12">
+                <img
+                  class="mbtn-close"
+                  src="img/Close.svg"
+                  alt=""
+                  data-dismiss="modal"
+                />
+              </div>
+              <div class="add-modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img class="imark" src="img/close-red.svg" alt="" />
+                  </div>
+                  <div class="col-md-12">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      INCORRECT DETAILS
+                    </h5>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <p class="specify_name">
+                      Specify a name for this 360 View Dashboard
+                    </p>
+                  </div> -->
+                  <div class="col-md-12">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group mt-5 border-hr">
+                            <!-- <input
+                              type="text"
+                              class="dashboard_name"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter dashboard name here..."
+                            /> -->
+                            <hr />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <p class="view_d">
+                            You have specified a wrong reply to secret question.
+                            Please retry in 3 seconds.
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 sub-btn red-btn"
+                            data-dismiss="modal"
+                          >
+                            RETRY
+                          </button>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 cancel-btn"
+                            disabled
+                          >
+                            HELP
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade add_widget3"
+      id="orange"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="col-md-12">
+                <img
+                  class="mbtn-close"
+                  src="img/Close.svg"
+                  alt=""
+                  data-dismiss="modal"
+                />
+              </div>
+              <div class="add-modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img
+                      class="imark"
+                      src="img/alert-warning.svg"
+                      alt=""
+                      width="100"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      CAUTION ...
+                    </h5>
+                  </div>
+                  <!-- <div class="col-md-12">
+                    <p class="specify_name">
+                      Specify a name for this 360 View Dashboard
+                    </p>
+                  </div> -->
+                  <div class="col-md-12">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group mt-5 border-hr">
+                            <!-- <input
+                              type="text"
+                              class="dashboard_name"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter dashboard name here..."
+                            /> -->
+                            <hr />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <p class="view_d">
+                            The setting you have provided puts your network at
+                            risk. Are you sure you want to proceed with these
+                            new settings
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 sub-btn btn orange-btn"
+                            data-dismiss="modal"
+                          >
+                            CONTINUE
+                          </button>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 cancel-btn"
+                            disabled
+                          >
+                            HELP
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- customize widget modal end -->
+    <div class="container">
+      <div class="btn-list">
+        <button
+          class="btn btn-success"
+          data-target="#green"
+          data-toggle="modal"
+        >
+          green
+        </button>
+        <button class="btn btn-danger" data-target="#red" data-toggle="modal">
+          red
+        </button>
+        <button
+          class="btn btn-warning"
+          data-target="#orange"
+          data-toggle="modal"
+        >
+          blue
+        </button>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous" 
+    />-->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/new-device.css" />
+    <link rel="stylesheet" href="css/dashboard360.css" />
+    <link rel="stylesheet" href="css/newd-donautchard.css" />
+    <link rel="stylesheet" href="css/sidebar-rgt.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/customize360.css" />
+    <link rel="stylesheet" href="css/filter.css" />
+
+    <title>Customize 360 view</title>
+
+    <style>
+      .sidebarRgt {
+        height: 83vh;
+        width: 78px;
+        position: fixed;
+        z-index: 999;
+        top: 100px;
+        right: 0;
+        /* overflow-x: hidden; */
+        transition: 0.5s;
+        padding: 6px 0;
+        /* background: #061320; */
+        /* border: 0.5px solid rgba(255, 255, 255, 0.2);
+          box-sizing: border-box;
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px; */
+      }
+
+      #main {
+        transition: 0.5s;
+        /* background-color: white; */
+        padding-right: 74px;
+        /* padding-left: 0; */
+      }
+
+      @media (max-width: 600px) {
+        #main {
+          padding: 15px;
+        }
+      }
+
+      .donut__slice__fourth::after {
+        border-top-color: #ff6838;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- modal start here -->
+
+    <!-- request modal start-->
+    <div
+      class="modal fade req-wedget"
+      id="requestModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <form>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2 class="popup-head">Request New Widget</h2>
+                  </div>
+                  <div class="col-12 form-group">
+                    <label for="FormControlInput1">Title:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="FormControlInput1"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-12 form-group">
+                    <label for="FormControlInput2">Description</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput2"
+                      placeholder=""
+                    ></textarea>
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput3">Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput3"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput4">Surname</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput4"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput5">Company Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput5"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput5">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="FormControlInput5"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="col-6 form-group pt-4">
+                    <button class="cnsl-btn">Cancel</button>
+                  </div>
+                  <div class="col-6 form-group pt-4">
+                    <a
+                      class="sbmt-btn"
+                      data-target="#req-success"
+                      data-toggle="modal"
+                      data-dismiss="modal"
+                    >
+                      Submit
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- request modal end -->
+
+    <!-- report modal start-->
+    <div
+      class="modal fade report-wedget"
+      id="reportModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <form>
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2 class="popup-head">Report</h2>
+                  </div>
+                  <div class="col-12 form-group">
+                    <label for="FormControlInput2">Description</label>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput2"
+                      placeholder=""
+                    ></textarea>
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput3">Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput3"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput4">Surname</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput4"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput5">Company Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="FormControlInput5"
+                      placeholder=""
+                    />
+                  </div>
+                  <div class="col-6 form-group">
+                    <label for="FormControlInput5">Email:</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="FormControlInput5"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="col-6 form-group pt-4">
+                    <button class="cnsl-btn">Cancel</button>
+                  </div>
+                  <div class="col-6 form-group pt-4">
+                    <button class="sbmt-btn">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- report modal end -->
+    <!-- req-success modal start-->
+    <div
+      class="modal fade req-success"
+      id="req-success"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="success">
+                    <img src="img/success.svg" alt="" />
+                    <h2>Amazing</h2>
+                    <p>
+                      Your Request of a New Widget has been Sucessfully placed
+                    </p>
+
+                    <button class="done-btn" data-dismiss="modal">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- req-success modal end -->
+
+    <!-- delete modal start-->
+    <div
+      class="modal fade delete"
+      id="delete"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="success">
+                    <img src="img/delete_widget.svg" alt="" />
+                    <h2>Are you sure?</h2>
+                    <p>You won't be able to revert this !</p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <button class="cnsl-btn" data-dismiss="modal">Cancle</button>
+                </div>
+                <div class="col-md-6">
+                  <button class="done-btn" data-dismiss="modal">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- delete modal end -->
+
+    <div class="sidebar hideshow1" id="sidebar">
+      <div class="logo-details">
+        <div class="logo_name">
+          <a href="index.html"><img src="img/logo.svg" alt="" /></a>
+        </div>
+
+        <img class="bx bx-menu" src="img/hamburger.svg" id="btn" alt="" />
+      </div>
+      <div class="row cur-row">
+        <div class="status">
+          <a data-toggle="collapse" href="#status">
+            <span class="links_name"
+              ><span class="stats">Stats: Last 24 hours</span>
+            </span>
+            <div class="status-imgs">
+              <span>
+                <img src="img/status-i1.svg" alt="" />
+                <h6>300</h6>
+              </span>
+              <span>
+                <img src="img/status-i2.svg" alt="" />
+                <h6>100</h6>
+              </span>
+              <img src="img/arrow-down2.svg" alt="" />
+            </div>
+          </a>
+          <div class="collapse" id="status">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <!-- <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="2"
+                  ></li> -->
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/status-i1.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/red_bud.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          Device <br />
+                          at Risk
+                        </h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">120</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/risk.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Attack / Threats</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="carousel-item">
+                    <div class="col-md-12 d-flex">
+                      <div class="card mycard" style="width: 18rem">
+                        <img
+                          src="img/status-i1.svg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                        <div class="card-body">
+                          <h5 class="card-title">Protected Endpoints</h5>
+                          <div class="row pe-row">
+                            <div class="col-md-7">300</div>
+                            <div class="col-md-5 pe-col-5">+14</div>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="card mycard" style="width: 18rem">
+                        <img src="img/ta.svg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                          <h5 class="card-title">Trusted Applicants</h5>
+                          <div class="row pe-row">
+                            <div class="col-md-7">100</div>
+                            <div class="col-md-5 pe-col-5">+14</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="prev"
+              >
+                <img src="img/left-arrow.svg" alt="" />
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="next"
+              >
+                <img src="img/right-arrow.svg" alt="" />
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 p-1 status-bg">
+          <div class="status1">
+            <a data-toggle="collapse" href="#status">
+              <span class="links_name"
+                ><span class="last-s">Last 24 hrs</span>
+              </span>
+            </a>
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="3"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/status-i1.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-12">300</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">100</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/risk.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Device at Risk</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">120</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/red_bud.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Attack / Threats</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">100</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li class="pb-3 pt-2">
+          <a data-toggle="collapse" href="#dashboard">
+            <img
+              src="img/left_dashboard.svg"
+              alt=""
+              class=""
+              onclick="openclose()"
+            />
+            <span class="links_name">Dashboard</span>
+          </a>
+          <div class="collapse" id="dashboard">
+            <ul class="col-list">
+              <li class="active">
+                <a class="" href="index.html">
+                  360 View<span class="active-col-list"></span
+                ></a>
+              </li>
+              <li>
+                <a class="" href=""> Risk Assesment</a>
+              </li>
+              <li><a class="" href="">Endpoint Insights</a></li>
+              <li><a class="" href="">Application Insights</a></li>
+              <li><a class="" href="">Load Balancing Insights</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#protection">
+            <img src="img/protection.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Protection</span>
+          </a>
+          <div class="collapse" id="protection">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Protection Policies</a>
+              </li>
+              <li>
+                <a class="" href=""> Forensics</a>
+              </li>
+              <li><a class="" href="">Trust Stores</a></li>
+              <li><a class="" href="">Trust Binaries</a></li>
+              <li><a class="" href="">Trust Points</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#endpoints">
+            <img src="img/endpoints.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Endpoints</span>
+          </a>
+          <div class="collapse" id="endpoints">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Devices</a>
+              </li>
+              <li>
+                <a class="" href=""> Devices Groups</a>
+              </li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#inventry">
+            <img src="img/inventory.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Inventory</span>
+          </a>
+          <div class="collapse" id="inventry">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Applications</a>
+              </li>
+              <li>
+                <a class="" href=""> Platforms</a>
+              </li>
+              <li><a class="" href="">Endpoint</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#notification">
+            <img
+              src="img/left_notification.svg"
+              alt=""
+              width="18"
+              onclick="openclose()"
+            />
+            <span class="links_name">Notifications & Logs</span>
+          </a>
+          <div class="collapse" id="notification">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Security alerts & notifications</a>
+              </li>
+              <li>
+                <a class="" href=""> System messages</a>
+              </li>
+              <li><a class="" href="">Audit trail logs</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#integration">
+            <img src="img/integration.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Integration</span>
+          </a>
+          <div class="collapse" id="integration">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Rest</a>
+              </li>
+              <li>
+                <a class="" href=""> Syslog</a>
+              </li>
+              <li><a class="" href="">Splunk</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#reports">
+            <img src="img/report.svg" alt="" width="18" onclick="openclose()" />
+            <span class="links_name">Reports</span>
+          </a>
+          <div class="collapse" id="reports">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Report 1</a>
+              </li>
+              <li>
+                <a class="" href=""> Report 2</a>
+              </li>
+              <li><a class="" href="">Report 3</a></li>
+              <li><a class="" href="">Report 4</a></li>
+              <li><a class="" href="">Report 5</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="profile border-0">
+          <div class="profile-details">
+            <div class="copy-right" id="cr">
+              <p class="my-5">
+                &copy;
+                <script type="text/javascript">
+                  var d = new Date();
+                  yr = d.getFullYear();
+                  document.write(yr);
+                </script>
+                companyname inc
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section" id="home">
+      <header class="p-3" id="head">
+        <div class="col-md-12">
+          <div class="row head-row">
+            <div class="col-md-7">
+              <div class="searchbar">
+                <!-- <img
+                  id="search"
+                  alt=""
+                  width="18.75px"
+                /> -->
+                <span id="search"></span>
+                <input type="search" placeholder="Search..." />
+                <span id="rgt-arrow"> </span>
+              </div>
+            </div>
+            <!-- head right -->
+            <div class="col-md-5">
+              <div class="head-rgt">
+                <div class="col-md-6 p-0">
+                  <div class="icon_list">
+                    <input type="checkbox" id="ham-menu" />
+                    <label for="ham-menu">
+                      <div class="hide-des">
+                        <img src="img/hamburger.svg" alt="" />
+                      </div>
+                    </label>
+                    <div class="full-page-green"></div>
+                    <div class="ham-menu">
+                      <ul class="nav-list">
+                        <li>
+                          <a data-toggle="collapse" href="#dashboard">
+                            <i class="bx bx-grid-alt"></i>
+                            <span class="links_name">Dashboard</span>
+                          </a>
+                          <div class="collapse" id="dashboard">
+                            <ul class="col-list">
+                              <li class="active">
+                                <a class="" href=""> 360 View</a>
+                              </li>
+                              <li>Risk Assesment</li>
+                              <li>Endpoint Insights</li>
+                              <li>Application Insights</li>
+                              <li>Load Balancing Insights</li>
+                            </ul>
+                          </div>
+                          <!-- <span class="tooltip">Dashboard</span> -->
+                        </li>
+
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-user"></i>
+                            <span class="links_name">Protection</span>
+                          </a>
+                          <!-- <span class="tooltip">Protection</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-chat"></i>
+                            <span class="links_name">Endpoints</span>
+                          </a>
+                          <!-- <span class="tooltip">Messages</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-pie-chart-alt-2"></i>
+                            <span class="links_name">Inventory</span>
+                          </a>
+                          <!-- <span class="tooltip">Analytics</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-folder"></i>
+                            <span class="links_name"
+                              >Notifications and Logs</span
+                            >
+                          </a>
+                          <!-- <span class="tooltip">Files</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-cart-alt"></i>
+                            <span class="links_name">Integrations</span>
+                          </a>
+                          <!-- <span class="tooltip">Order</span> -->
+                        </li>
+                        <li class="border-0">
+                          <a href="#">
+                            <i class="bx bx-heart"></i>
+                            <span class="links_name">Reports</span>
+                          </a>
+                          <!-- <span class="tooltip">Saved</span> -->
+                        </li>
+
+                        <li class="profile border-0">
+                          <div class="profile-details">
+                            <!--<img src="profile.jpg" alt="profileImg">-->
+                            <div class="copy-right">
+                              <p class="my-5">
+                                <script type="text/javascript">
+                                  var d = new Date();
+                                  yr = d.getFullYear();
+                                  document.write(yr);
+                                </script>
+                                companyname inc
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- <img
+                    src="img/hamburger.svg"
+                    alt=""
+                    class="hamburger-mob hideshow"
+                  /> -->
+                    <ul class="head-logo border-lft border-rgt">
+                      <li id="notify"></li>
+                      <li id="bug"></li>
+                      <li id="setting"></li>
+                      <li id="help"></li>
+                      <li id="sunmoon" onclick="themeChange()"></li>
+                      <li class="hideshow">
+                        <div class="profile">
+                          <div class="dropdown">
+                            <a
+                              class="pro_dpdn"
+                              id="dropdownMenuButton1"
+                              data-toggle="dropdown"
+                              aria-expanded="false"
+                              ><img src="img/user_avtar.svg" alt="" />
+                              <span
+                                >Cameron Williamson<img
+                                  src="img/arrow_down.png"
+                                  alt=""
+                              /></span>
+                            </a>
+                            <ul
+                              class="dropdown-menu"
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              <li>
+                                <a class="dropdown-item" href="#">Action</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Another action</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Something else here</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <!-- <i
+              class="fas fa-moon"
+              onclick="themeChange()"
+              id="sunmoon"
+            ></i> -->
+                  </div>
+                </div>
+                <div class="col-md-6 hideshow1 p-0">
+                  <div class="profile">
+                    <ul class="pro-ul">
+                      <li id="user_avtar"></li>
+                      <li>C. Williamson</li>
+                      <li>
+                        <div class="dropdown">
+                          <a
+                            class="pro_dpdn"
+                            id="dropdownMenuButton1"
+                            data-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <img src="img/arrow_down.png" alt=""
+                          /></a>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <a class="dropdown-item" href="#">Action</a>
+
+                            <a class="dropdown-item" href="#">Another action</a>
+
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="home-body-sec">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="customize360view">
+                <!-- <div class="col-md-2 p-0">
+                <div class="sidebar2 open hideshow1">
+                  <div class="logo-details">
+                    <h2>Layouts</h2>
+                    <img
+                      class="bx bx-menu"
+                      src="img/hamburger.svg"
+                      onclick="layoutmenu()"
+                      alt=""
+                    />
+                  </div>
+
+                  <ul class="newd-li">
+                    <li class="active pt-2">
+                      <a href="#">
+                        <span class="links_name"
+                          >Full Screen<span class="active-newd-li"></span
+                        ></span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">2 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">3 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">4 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">5 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">6 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">7 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">8 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">9 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">10 Column Layout</span>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">2 Column Layout</span> </a
+                      ><small>(30% - 70%)</small>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">3 Column Layout</span>
+                      </a>
+                      <small>(20% - 20% - 60%)</small>
+                    </li>
+                    <li class="">
+                      <a href="#">
+                        <span class="links_name">4 Column Layout</span>
+                      </a>
+                      <small>(15% - 15% - 15% - 55%)</small>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="layout-head">
+                          <h1>2 Column Layout</h1>
+                          <small>(50% - 50%)</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <button class="btn btn">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+                <div class="col-md-12">
+                  <div class="row">
+                    <div class="col sidebar2 open hideshow1" id="sidenav2">
+                      <div
+                        class="nav flex-column nav-pills"
+                        id="v-pills-tab"
+                        role="tablist"
+                        aria-orientation="vertical"
+                      >
+                        <div class="logo-details">
+                          <h2>Layouts</h2>
+                          <img
+                            class="bx bx-menu"
+                            src="img/hamburger.svg"
+                            id="btn3"
+                            alt=""
+                          />
+                        </div>
+
+                        <a
+                          class="nav-link active"
+                          id="v-pills-fullScreen-tab"
+                          data-toggle="pill"
+                          href="#v-pills-fullscreen"
+                          role="tab"
+                          aria-controls="v-pills-fullscreen"
+                          aria-selected="true"
+                          >Full Screen</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-2column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-2column"
+                          role="tab"
+                          aria-controls="v-pills-2column"
+                          aria-selected="true"
+                          >2 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-3column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-3column"
+                          role="tab"
+                          aria-controls="v-pills-3column"
+                          aria-selected="false"
+                          >3 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-4column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-4column"
+                          role="tab"
+                          aria-controls="v-pills-4column"
+                          aria-selected="false"
+                          >4 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-5column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-5column"
+                          role="tab"
+                          aria-controls="v-pills-5column"
+                          aria-selected="false"
+                          >5 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-6column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-6column"
+                          role="tab"
+                          aria-controls="v-pills-6column"
+                          aria-selected="false"
+                          >6 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-7column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-7column"
+                          role="tab"
+                          aria-controls="v-pills-7column"
+                          aria-selected="false"
+                          >7 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-8column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-8column"
+                          role="tab"
+                          aria-controls="v-pills-8column"
+                          aria-selected="false"
+                          >8 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-9column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-9column"
+                          role="tab"
+                          aria-controls="v-pills-9column"
+                          aria-selected="false"
+                          >9 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-10column-tab"
+                          data-toggle="pill"
+                          href="#v-pills-10column"
+                          role="tab"
+                          aria-controls="v-pills-10column"
+                          aria-selected="false"
+                          >10 Column Layout</a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-2columnlay-tab"
+                          data-toggle="pill"
+                          href="#v-pills-2columnlay"
+                          role="tab"
+                          aria-controls="v-pills-2columnlay"
+                          aria-selected="false"
+                          >2 Column Layout <br />
+                          <span>
+                            <small>(30% - 70%)</small>
+                          </span></a
+                        >
+
+                        <a
+                          class="nav-link"
+                          id="v-pills-3columnlay-tab"
+                          data-toggle="pill"
+                          href="#v-pills-3columnlay"
+                          role="tab"
+                          aria-controls="v-pills-3columnlay"
+                          aria-selected="false"
+                          >3 Column Layout
+                          <span>
+                            <small>(20% - 20% - 60%)</small>
+                          </span></a
+                        >
+                        <a
+                          class="nav-link"
+                          id="v-pills-4columnlay-tab"
+                          data-toggle="pill"
+                          href="#v-pills-4columnlay"
+                          role="tab"
+                          aria-controls="v-pills-4columnlay"
+                          aria-selected="false"
+                          >4 Column Layout
+                          <span>
+                            <small>(15% - 15% - 15% - 55%)</small>
+                          </span></a
+                        >
+                        <div class="sidebar-body2">
+                          <div class="breadcrumb-virtical hideshow1 border-0">
+                            <h2>Layouts</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="customize-body2" id="cus-body">
+                      <div class="col-md-12 p-0">
+                        <div class="breadcrumb-head">
+                          <div class="newd-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                              <div id="setting"></div>
+                              <div class="bdcmb-lable">
+                                <ol
+                                  class="breadcrumb breadcrumb-ol"
+                                  id="breadcrumb"
+                                >
+                                  <li class="breadcrumb-item">Setting</li>
+                                  <li
+                                    class="breadcrumb-item"
+                                    aria-current="page"
+                                  >
+                                    Widget
+                                  </li>
+                                </ol>
+                              </div>
+                            </nav>
+                          </div>
+                          <div class="head-rgt hideshow">
+                            <div class="col-md-6 p-0">
+                              <div class="icon_list">
+                                <!-- <input type="checkbox" id="ham-menu" /> -->
+                                <label for="ham-menu2">
+                                  <div class="hide-des">
+                                    <img src="img/hamburger.svg" alt="" />
+                                  </div>
+                                </label>
+                              </div>
+
+                              <div class="ham-menu2"></div>
+                            </div>
+                          </div>
+
+                          <!-- ################ -->
+                        </div>
+                      </div>
+                      <div class="col-12" id="main">
+                        <div class="tab-content" id="v-pills-tabContent">
+                          <div
+                            class="tab-pane fade show active"
+                            id="v-pills-fullscreen"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-fullScreen-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>Full Screen Column Layout</h1>
+                                    <small>(100%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-2column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-2column-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>2 Column Layout</h1>
+                                    <small>(50% - 50%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                  <div class="widget-column widget-column2">
+                                    <h4>Add widget here</h4>
+
+                                    <div class="row">
+                                      <div
+                                        class="drop__card col-md-12 mt-1 mb-1"
+                                      >
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div
+                                              class="midium-card"
+                                              id="mecards2"
+                                            >
+                                              <div class="container-fluid">
+                                                <img
+                                                  class="mid-card-setting"
+                                                  src="img/threedot.svg"
+                                                  id="setting-dpdn2"
+                                                  data-toggle="dropdown"
+                                                  alt=""
+                                                />
+                                                <div
+                                                  class="dropdown-menu setting-dpdn-small"
+                                                  aria-labelledby="setting-dpdn2"
+                                                >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    ><img
+                                                      src="img/edit-widget.svg"
+                                                      alt=""
+                                                    />
+                                                    Edit</a
+                                                  >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    data-target="#delete"
+                                                    data-toggle="modal"
+                                                    ><img
+                                                      src="img/delete.svg"
+                                                      alt=""
+                                                    />Delete</a
+                                                  >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    data-target="#reportModal"
+                                                    data-toggle="modal"
+                                                    ><img
+                                                      src="img/report-widget.svg"
+                                                      alt=""
+                                                    />Report Bug</a
+                                                  >
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="donut"
+                                                style="
+                                                  --first: 0.7;
+                                                  --second: 0.43;
+                                                  --third: 0.32;
+                                                  --fourth: 0.22;
+                                                "
+                                              >
+                                                <div
+                                                  class="donut__slice donut__slice__first"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__second"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__third"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__fourth"
+                                                ></div>
+
+                                                <div class="donut__label">
+                                                  <div
+                                                    class="donut__label__sub"
+                                                  >
+                                                    <img
+                                                      src="img/pd.svg"
+                                                      width="19"
+                                                      alt=""
+                                                    />
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <label for=""
+                                                >Total Applications</label
+                                              >
+
+                                              <div class="row mid-list-row">
+                                                <div class="mid-list1">100</div>
+                                                <div class="mid-list2">
+                                                  <img
+                                                    src="img/arrow-down-white.svg"
+                                                    alt=""
+                                                  />
+                                                  10%
+                                                </div>
+                                                <div class="mid-list3">
+                                                  Last 24h
+                                                  <img
+                                                    src="img/arrow-down2.svg"
+                                                    alt=""
+                                                  />
+                                                </div>
+                                              </div>
+
+                                              <div class="col-md-12">
+                                                <table class="mid-table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th class="col">Type</th>
+                                                      <th class="col">
+                                                        Applications
+                                                      </th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td class="col">
+                                                        Trusted
+                                                      </td>
+                                                      <td class="col mid-ul1">
+                                                        60
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="col">
+                                                        Untrusted
+                                                      </td>
+                                                      <td class="col td4">
+                                                        40
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="col">New</td>
+                                                      <td class="col td6">
+                                                        20
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="drop__card col-md-12 mt-1 mb-1"
+                                      >
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div
+                                              class="midium-card"
+                                              id="mecards2"
+                                            >
+                                              <div class="container-fluid">
+                                                <img
+                                                  class="mid-card-setting"
+                                                  src="img/threedot.svg"
+                                                  id="setting-dpdn2"
+                                                  data-toggle="dropdown"
+                                                  alt=""
+                                                />
+                                                <div
+                                                  class="dropdown-menu setting-dpdn-small"
+                                                  aria-labelledby="setting-dpdn2"
+                                                >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    ><img
+                                                      src="img/edit-widget.svg"
+                                                      alt=""
+                                                    />
+                                                    Edit</a
+                                                  >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    data-target="#delete"
+                                                    data-toggle="modal"
+                                                    ><img
+                                                      src="img/delete.svg"
+                                                      alt=""
+                                                    />Delete</a
+                                                  >
+                                                  <a
+                                                    class="dropdown-item"
+                                                    href="#"
+                                                    data-target="#reportModal"
+                                                    data-toggle="modal"
+                                                    ><img
+                                                      src="img/report-widget.svg"
+                                                      alt=""
+                                                    />Report Bug</a
+                                                  >
+                                                </div>
+                                              </div>
+                                              <div
+                                                class="donut"
+                                                style="
+                                                  --first: 0.7;
+                                                  --second: 0.43;
+                                                  --third: 0.32;
+                                                  --fourth: 0.22;
+                                                "
+                                              >
+                                                <div
+                                                  class="donut__slice donut__slice__first"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__second"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__third"
+                                                ></div>
+                                                <div
+                                                  class="donut__slice donut__slice__fourth"
+                                                ></div>
+
+                                                <div class="donut__label">
+                                                  <div
+                                                    class="donut__label__sub"
+                                                  >
+                                                    <img
+                                                      src="img/pd.svg"
+                                                      width="19"
+                                                      alt=""
+                                                    />
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <label for=""
+                                                >Total Applications</label
+                                              >
+
+                                              <div class="row mid-list-row">
+                                                <div class="mid-list1">100</div>
+                                                <div class="mid-list2">
+                                                  <img
+                                                    src="img/arrow-down-white.svg"
+                                                    alt=""
+                                                  />
+                                                  10%
+                                                </div>
+                                                <div class="mid-list3">
+                                                  Last 24h
+                                                  <img
+                                                    src="img/arrow-down2.svg"
+                                                    alt=""
+                                                  />
+                                                </div>
+                                              </div>
+
+                                              <div class="col-md-12">
+                                                <!-- <ul class="mid-ul">
+                                            <li class="mid-ul1">50 <span>Online</span></li>
+                                            <li class="mid-ul2">30 <span>Offline</span></li>
+                                            <li class="mid-ul3">20 <span>New</span></li>
+                                          </ul> -->
+
+                                                <table class="mid-table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th class="col">Type</th>
+                                                      <th class="col">
+                                                        Applications
+                                                      </th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td class="col">
+                                                        Trusted
+                                                      </td>
+                                                      <td class="col mid-ul1">
+                                                        60
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="col">
+                                                        Untrusted
+                                                      </td>
+                                                      <td class="col td4">
+                                                        40
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td class="col">New</td>
+                                                      <td class="col td6">
+                                                        20
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-3column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-3column-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>3 Column Layout</h1>
+                                    <small>(33% - 33% - 33%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-33">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-33">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-33">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-4column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-4column-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>4 Column Layout</h1>
+                                    <small>(25% - 25% - 25% - 25%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-5column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-5column-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>5 Column Layout</h1>
+                                    <small>(20% - 20% - 20% - 20% - 20%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+                                <div class="col-20">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-20">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-20">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-20">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-20">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-6column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-6column-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>6 Column Layout</h1>
+                                    <small
+                                      >(16% - 16% - 16% - 16% - 16% -
+                                      16%)</small
+                                    >
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-16">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-7column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-7column-tab"
+                          >
+                            ...
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-8column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-8column-tab"
+                          >
+                            ...
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-9column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-9column-tab"
+                          >
+                            ...
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-10column"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-10column-tab"
+                          >
+                            ...
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-2columnlay"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-2columnlay-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>2 Column Layout</h1>
+                                    <small>(30% - 70%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-9">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-3columnlay"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-3columnlay-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>3 Column Layout</h1>
+                                    <small>(20% - 20% - 60%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="tab-pane fade"
+                            id="v-pills-4columnlay"
+                            role="tabpanel"
+                            aria-labelledby="v-pills-4columnlay-tab"
+                          >
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="layout-head">
+                                    <h1>4 Column Layout</h1>
+                                    <small>(15% - 15% - 15% - 55%)</small>
+                                  </div>
+                                </div>
+                                <div class="col-md-4">
+                                  <div class="layout-save-btn">
+                                    <button
+                                      class="btn req-wedget-btn"
+                                      data-target="#requestModal"
+                                      data-toggle="modal"
+                                    >
+                                      Request Widget</button
+                                    ><button class="btn">Save</button>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="widget-column">
+                                    <h4>Add widget here</h4>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="sidenav" class="sidebarRgt hideshow1">
+      <div class="right-sec widget-library">
+        <div id="slidebtn" class="logo-details">
+          <img class="bx bx-menu" src="img/hamburger.svg" id="btn2" alt="" />
+          <h3 class="m-0">Widget Librery</h3>
+        </div>
+
+        <div class="rgtsec-body1">
+          <div class="right-search">
+            <div class="col-md-12 p-0">
+              <ul class="filter-sec">
+                <li class="filter-li">
+                  <div class="search-widget" id="serch-w" onclick="incsearch()">
+                    <span id="search"></span>
+                    <input type="search" placeholder="" />
+                  </div>
+                </li>
+                <li class="filter-li">
+                  <span
+                    id="filter1"
+                    data-toggle="collapse"
+                    data-target="#collapseExample"
+                    onclick="incfilter()"
+                  >
+                  </span>
+                  <h4 id="flable" class="f-hide">Filter</h4>
+                </li>
+                <li class="btn-green"><button class="btn">+</button></li>
+                <!-- <li class="filter-li">
+                  <input type="search" placeholder="" />
+                  <img src="img/search.svg" alt="" />
+                </li>
+                <li class="filter-li">
+                  
+                  <img src="img/Filters.svg" alt="" onclick="incfilter()" />
+                  <h4 id="flable" class="f-hide">Filter</h4>
+                </li>
+                <li>
+                  <button class="btn-green">+</button>
+                </li> -->
+              </ul>
+
+              <!-- <span id="filter"></span> -->
+            </div>
+          </div>
+
+          <!-- <input type="search" placeholder="Sort by Graph/Table..." />
+              <span id="arrow-down"></span> -->
+
+          <div class="col-md-12">
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body filter-card">
+                <div class="row">
+                  <div class="col-md-12 pr-0">
+                    <label for="">Type</label>
+
+                    <!-- <ul
+                      class="nav nav-pills mb-3"
+                      id="pills-tab"
+                      role="tablist"
+                    >
+                      <li class="nav-item" role="presentation">
+                        <a
+                          class="nav-link active"
+                          id="pills-home-tab"
+                          data-toggle="pill"
+                          href="#pills-home"
+                          role="tab"
+                          aria-controls="pills-home"
+                          aria-selected="true"
+                          >All</a
+                        >
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a
+                          class="nav-link"
+                          id="pills-profile-tab"
+                          data-toggle="pill"
+                          href="#pills-profile"
+                          role="tab"
+                          aria-controls="pills-profile"
+                          aria-selected="false"
+                          >Pie Chart</a
+                        >
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a
+                          class="nav-link"
+                          id="pills-contact-tab"
+                          data-toggle="pill"
+                          href="#pills-contact"
+                          role="tab"
+                          aria-controls="pills-contact"
+                          aria-selected="false"
+                          >Table</a
+                        >
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a
+                          class="nav-link"
+                          id="pills-contact-tab"
+                          data-toggle="pill"
+                          href="#pills-value"
+                          role="tab"
+                          aria-controls="pills-value"
+                          aria-selected="false"
+                          >Value</a
+                        >
+                      </li>
+                    </ul> -->
+
+                    <ul id="myBtnContainer">
+                      <li class="list active" data-filter="All">All</li>
+                      <li class="list" data-filter="pieChart">Pie Chart</li>
+                      <li class="list" data-filter="table">Table</li>
+                      <li class="list" data-filter="val">Value</li>
+                    </ul>
+
+                    <ul id="myBtnContainer2">
+                      <li class="list" data-filter="newWid">New</li>
+                      <li class="list" data-filter="used">Used</li>
+                      <li class="list" data-filter="unused">Unused</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product">
+            <div class="col-md-12 itemBox newWid">
+              <div class="widget-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="widget-img"></div>
+                  </div>
+                  <div class="col-md-8 p-0">
+                    <div class="widget-right">
+                      <label for="">New</label>
+                      <div class="widget-head">
+                        <input type="checkbox" name="" id="" />
+                        <h2>Protected Devices</h2>
+                      </div>
+
+                      <p>
+                        To activate the a widget drag it to the sidebar or click
+                        on it. To deactivate a widget and delete its settings,
+                        drag it back.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 itemBox pieChart">
+              <div class="widget-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="widget-img"></div>
+                  </div>
+                  <div class="col-md-8 p-0">
+                    <div class="widget-right">
+                      <div class="widget-head">
+                        <input type="checkbox" name="" id="" />
+                        <h2>Protected Devices</h2>
+                      </div>
+
+                      <p>
+                        To activate the a widget drag it to the sidebar or click
+                        on it. To deactivate a widget and delete its settings,
+                        drag it back.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 itemBox table">
+              <div class="widget-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="widget-img"></div>
+                  </div>
+                  <div class="col-md-8 p-0">
+                    <div class="widget-right">
+                      <div class="widget-head">
+                        <input type="checkbox" name="" id="" />
+                        <h2>Protected Devices</h2>
+                      </div>
+
+                      <p>
+                        To activate the a widget drag it to the sidebar or click
+                        on it. To deactivate a widget and delete its settings,
+                        drag it back.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 itemBox val">
+              <div class="widget-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="widget-img"></div>
+                  </div>
+                  <div class="col-md-8 p-0">
+                    <div class="widget-right">
+                      <div class="widget-head">
+                        <input type="checkbox" name="" id="" />
+                        <h2>Protected Devices</h2>
+                      </div>
+
+                      <p>
+                        To activate the a widget drag it to the sidebar or click
+                        on it. To deactivate a widget and delete its settings,
+                        drag it back.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="product">
+              <div class="itemBox p"><img src="image/pie.png"></div>
+              <div class="itemBox t"><img src="image/table.png"></div>
+              <div class="itemBox v"><img src="image/value.png"></div>
+            </div> -->
+        </div>
+
+        <div class="rgtsec-body2">
+          <div class="breadcrumb-virtical hideshow1">
+            <span id="search"></span>
+            <span id="filter"></span>
+            <h2>Widget Librery</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- link script -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/newd-donutchart.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/dragAndDrop.js"></script>
+    <script src="js/sidebar-rgt.js"></script>
+    <script src="/js/filter.js"></script>
+
+    <!-- <script>
+      $("#btn2").click(function () {
+        $("#btn2").toggleClass("csstransforms");
+      });
+    </script> -->
+
+    <!-- <script>
+      function incsearch() {
+        document.getElementById("serch-w").style.width = "170px";
+      }
+
+      $(document).ready(function () {
+        $(".list").click(function () {
+          const value = $(this).attr("data-filter");
+          if (value == "All") {
+            $(".itemBox").show("1000");
+          } else {
+            $(".itemBox")
+              .not("." + value)
+              .hide("1000");
+            $(".itemBox")
+              .filter("." + value)
+              .show("1000");
+          }
+        });
+        $(".list").click(function () {
+          $(this).addClass("active").siblings().removeClass("active");
+        });
+      });
+    </script> -->
+  </body>
+</html>

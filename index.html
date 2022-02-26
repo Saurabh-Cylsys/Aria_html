@@ -1,0 +1,3767 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard 360 View</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/donautchard.css" />
+    <!-- <link rel="stylesheet" href="css/donautchard2.css" /> -->
+    <link rel="stylesheet" href="css/sidebar-rgt.css" />
+    <link rel="stylesheet" href="css/tooltip.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/table_donut.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .sidebarRgt {
+        height: 80vh;
+        width: 78px;
+        position: fixed;
+        z-index: 999;
+        top: 112px;
+        right: 0;
+        /* overflow-x: hidden; */
+        transition: 0.5s;
+        padding: 6px 0;
+        /* background: #061320; */
+        /* border: 0.5px solid rgba(255, 255, 255, 0.2);
+        box-sizing: border-box;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px; */
+      }
+
+      #main {
+        transition: 0.5s;
+        /* background-color: white; */
+        padding-right: 74px;
+      }
+
+      @media (max-width: 600px) {
+        #main {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- toast start here -->
+    <div class="aria-toast-success p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="2000"
+      >
+        <div class="toast-body one">
+          <div class="media">
+            <img src="img/Check.svg" class="mr-3" alt="check" />
+            <div class="media-body">
+              <button
+                type="button"
+                class="ml-2 mb-1 close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="mt-0">CHANGES SAVED</h5>
+              <p>The changes made to AZT settings have been saved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aria-toast-danger p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="2500"
+      >
+        <div class="toast-body two">
+          <div class="media">
+            <img src="img/toast-close.svg" class="mr-3" alt="toast-close" />
+            <div class="media-body">
+              <button
+                type="button"
+                class="ml-2 mb-1 close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="mt-0">NEW ALERTS DETECTED</h5>
+              <p>
+                Check your AZT Notifications - New alerts have been detected
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aria-toast-warning p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="3000"
+      >
+        <div class="toast-body three">
+          <div class="media">
+            <img src="img/alert-warning.svg" class="mr-3" alt="alert-warning" />
+            <div class="media-body">
+              <button
+                type="button"
+                class="ml-2 mb-1 close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="mt-0">PENDING UPDATES</h5>
+              <p>
+                There are pending updates that may impact AZT performance...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aria-toast-update p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="3500"
+      >
+        <div class="toast-body four">
+          <div class="media">
+            <img src="img/Check-blue.svg" class="mr-3" alt="check" />
+            <div class="media-body">
+              <button
+                type="button"
+                class="ml-2 mb-1 close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="mt-0">PRODUCT UPDATE DONE</h5>
+              <p>Your version of AZT has been successfully updated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aria-toast-available p-3">
+      <div
+        id="liveToast"
+        class="toast hide"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-delay="4000"
+      >
+        <div class="toast-body five">
+          <div class="media">
+            <img src="img/toast-available.svg" class="mr-3" alt="..." />
+            <div class="media-body">
+              <button
+                type="button"
+                class="ml-2 mb-1 close"
+                data-dismiss="toast"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="mt-0">PRODUCT UPDATE AVAILABLE</h5>
+              <p>There is a new AZT product update ready to be installed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- toast end here -->
+    <!-- modal -->
+
+    <!-- site modal start here -->
+    <div class="modal site-modal" id="site" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h1 class="modal-title">30 Sites</h1>
+            <div>
+              <p>allsdfsfaegf</p>
+            </div>
+          </div> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-3 pr-5">
+                    <div class="col-md-12">
+                      <div class="site-title">
+                        <h1>30 Sites</h1>
+                      </div>
+                      <div class="all-site-selc">
+                        <p>All</p>
+                        <div class="select-all">
+                          <input type="checkbox" />
+                          <span>All Sites (30)</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="apply">
+                        <button type="button" class="btn">Apply</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="col-md-12">
+                      <!-- modal search bar start -->
+                      <div class="row modal-head">
+                        <div class="col-md-9">
+                          <div class="modal-searchbar">
+                            <div class="searchbar">
+                              <img
+                                src="img/search.svg"
+                                alt=""
+                                width="18.75px"
+                              />
+                              <input type="search" placeholder="Search" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <!-- <span aria-hidden="true">&times;</span> -->
+                            <img src="img/Close.svg" alt="" />
+                          </button>
+                        </div>
+                      </div>
+                      <!-- modal search bar end -->
+                      <div class="row1">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="head-check">
+                              <input type="checkbox" /><span
+                                >OT/Production Sites</span
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="head-check">
+                              <input type="checkbox" /><span
+                                >OT/Production Sites</span
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="head-check">
+                              <input type="checkbox" /><span
+                                >OT/Production Sites</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row2">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="usa">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>USA(4)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />
+                                    Wyandotte, MI</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Worcester, MA</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />North
+                                    Chicago, IL</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />Lake
+                                    County, IL</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="usa">
+                              <div class="head-check">
+                                <input type="checkbox" /><span> USA(4)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />
+                                    Wyandotte, MI</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Worcester, MA</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />North
+                                    Chicago, IL</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Lake
+                                    County, IL</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="usa">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>USA(4)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Wyandotte, MI</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Worcester, MA</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />North
+                                    Chicago, IL</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Lake
+                                    County, IL</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row3">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="latan">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>LATAN(2)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Barceloneta, PR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />Jayuya,
+                                    PR</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="latan">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>LATAN(2)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Barceloneta, PR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Jayuya, PR</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="latan">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>LATAN(2)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Barceloneta, PR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Jayuya, PR</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row4">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <div class="emea">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>EMEA(6)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />Cork,
+                                    IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Ballytivnan, IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/factory.svg" alt="" />Sligo,
+                                    IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Ludwigshafen, DE</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Campoverde, IT</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/factory.svg"
+                                      alt=""
+                                    />Singapore, SG</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="emea">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>EMEA(3)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Cork,
+                                    IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Ballytivnan, IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Sligo,
+                                    IR</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="emea">
+                              <div class="head-check">
+                                <input type="checkbox" /><span>EMEA(3)</span>
+                              </div>
+                              <hr />
+
+                              <ul>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Cork,
+                                    IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img
+                                      src="img/resident.svg"
+                                      alt=""
+                                    />Ballytivnan, IR</span
+                                  >
+                                </li>
+                                <li>
+                                  <input type="checkbox" /><span
+                                    ><img src="img/resident.svg" alt="" />Sligo,
+                                    IR</span
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- site modal end here -->
+
+    <!-- customize widget modal start -->
+    <div
+      class="modal fade add_widget"
+      id="addmodal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <!-- <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          <div class="modal-body">
+            <div class="container">
+              <div class="add-modal-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img class="imark" src="img/i_mark.svg" alt="" />
+                  </div>
+                  <div class="col-md-12">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Add a new 360 View Dashboard
+                    </h5>
+                  </div>
+                  <div class="col-md-12">
+                    <p class="specify_name">
+                      Specify a name for this 360 View Dashboard
+                    </p>
+                  </div>
+                  <div class="col-md-12">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="dashboard_name"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Enter dashboard name here..."
+                            />
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <p class="view_d">
+                            New 360 View Dashboards will be added under the
+                            <span> Dashboard > 360 View</span> and will be
+                            available only to you/your profile.
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 cancel-btn mb-1"
+                            data-dismiss="modal"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                        <div class="col-md-6">
+                          <button
+                            type="submit"
+                            class="btn col-12 sub-btn mb-1"
+                            disabled
+                          >
+                            Submit
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- customize widget modal end -->
+
+    <div class="sidebar hideshow1" id="sidebar">
+      <div class="logo-details">
+        <div class="logo_name"><img src="img/logo.svg" alt="" /></div>
+
+        <img class="bx bx-menu" src="img/hamburger.svg" id="btn" alt="" />
+      </div>
+      <div class="row cur-row">
+        <div class="status">
+          <a data-toggle="collapse" href="#status">
+            <span class="links_name"
+              ><span class="stats">Stats: Last 24 hours</span>
+            </span>
+            <div class="status-imgs">
+              <span>
+                <img src="img/status-i1.svg" alt="" />
+                <h6>300</h6>
+              </span>
+              <span>
+                <img src="img/status-i2.svg" alt="" />
+                <h6>100</h6>
+              </span>
+              <img src="img/arrow-down2.svg" alt="" />
+            </div>
+          </a>
+          <div class="collapse" id="status">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <!-- <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li> -->
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/status-i1.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/red_bud.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          Device <br />
+                          at Risk
+                        </h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">120</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/risk.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Attack / Threats</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="carousel-item">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/status-i1.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="prev"
+              >
+                <img src="img/left-arrow.svg" alt="" />
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="next"
+              >
+                <img src="img/right-arrow.svg" alt="" />
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 p-1 status-bg">
+          <div class="status1">
+            <a data-toggle="collapse" href="#status">
+              <span class="links_name"
+                ><span class="last-s">Last 24 hrs</span>
+              </span>
+            </a>
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="3"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/status-i1.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-12">300</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">100</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/risk.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Device at Risk</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">120</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img
+                        src="img/red_bud.svg"
+                        class="card-img-top"
+                        alt="..."
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">Attack / Threats</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">100</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li class="pb-3 pt-2">
+          <a data-toggle="collapse" href="#dashboard">
+            <img
+              src="img/left_dashboard.svg"
+              alt=""
+              class=""
+              onclick="openclose()"
+            />
+            <span class="links_name">Dashboard</span>
+          </a>
+          <div class="collapse" id="dashboard">
+            <ul class="col-list">
+              <li class="active">
+                <a class="" href="">
+                  360 View<span class="active-col-list"></span
+                ></a>
+              </li>
+              <li>
+                <a class="" href=""> Risk Assesment</a>
+              </li>
+              <li><a class="" href="">Endpoint Insights</a></li>
+              <li><a class="" href="">Application Insights</a></li>
+              <li><a class="" href="">Load Balancing Insights</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#protection">
+            <img src="img/protection.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Protection</span>
+          </a>
+          <div class="collapse" id="protection">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Protection Policies</a>
+              </li>
+              <li>
+                <a class="" href=""> Forensics</a>
+              </li>
+              <li><a class="" href="">Trust Stores</a></li>
+              <li><a class="" href="">Trust Binaries</a></li>
+              <li><a class="" href="">Trust Points</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#endpoints">
+            <img src="img/endpoints.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Endpoints</span>
+          </a>
+          <div class="collapse" id="endpoints">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Devices</a>
+              </li>
+              <li>
+                <a class="" href=""> Devices Groups</a>
+              </li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#inventry">
+            <img src="img/inventory.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Inventory</span>
+          </a>
+          <div class="collapse" id="inventry">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Applications</a>
+              </li>
+              <li>
+                <a class="" href=""> Platforms</a>
+              </li>
+              <li><a class="" href="">Endpoint</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#notification">
+            <img
+              src="img/left_notification.svg"
+              alt=""
+              width="18"
+              onclick="openclose()"
+            />
+            <span class="links_name">Notifications & Logs</span>
+          </a>
+          <div class="collapse" id="notification">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Security alerts & notifications</a>
+              </li>
+              <li>
+                <a class="" href=""> System messages</a>
+              </li>
+              <li><a class="" href="">Audit trail logs</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#integration">
+            <img src="img/integration.svg" alt="" onclick="openclose()" />
+            <span class="links_name">Integration</span>
+          </a>
+          <div class="collapse" id="integration">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Rest</a>
+              </li>
+              <li>
+                <a class="" href=""> Syslog</a>
+              </li>
+              <li><a class="" href="">Splunk</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#reports">
+            <img src="img/report.svg" alt="" width="18" onclick="openclose()" />
+            <span class="links_name">Reports</span>
+          </a>
+          <div class="collapse" id="reports">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Report 1</a>
+              </li>
+              <li>
+                <a class="" href=""> Report 2</a>
+              </li>
+              <li><a class="" href="">Report 3</a></li>
+              <li><a class="" href="">Report 4</a></li>
+              <li><a class="" href="">Report 5</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="profile border-0">
+          <div class="profile-details">
+            <div class="copy-right" id="cr">
+              <p class="my-5">
+                &copy;
+                <script type="text/javascript">
+                  var d = new Date();
+                  yr = d.getFullYear();
+                  document.write(yr);
+                </script>
+                companyname inc
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <section class="home-section" id="home">
+      <header class="p-3" id="head">
+        <div class="col-md-12">
+          <div class="row head-row">
+            <div class="col-md-7">
+              <div class="searchbar">
+                <!-- <img
+                  id="search"
+                  alt=""
+                  width="18.75px"
+                /> -->
+                <span id="search"></span>
+                <input type="search" placeholder="Search..." />
+                <span id="rgt-arrow"> </span>
+              </div>
+            </div>
+            <!-- head right -->
+            <div class="col-md-5">
+              <div class="head-rgt">
+                <div class="col-md-6 p-0">
+                  <div class="icon_list">
+                    <input type="checkbox" id="ham-menu" />
+                    <label for="ham-menu">
+                      <div class="hide-des">
+                        <img src="img/hamburger.svg" alt="" />
+                      </div>
+                    </label>
+                    <div class="full-page-green"></div>
+                    <div class="ham-menu">
+                      <ul class="nav-list">
+                        <li>
+                          <a data-toggle="collapse" href="#dashboard">
+                            <i class="bx bx-grid-alt"></i>
+                            <span class="links_name">Dashboard</span>
+                          </a>
+                          <div class="collapse" id="dashboard">
+                            <ul class="col-list">
+                              <li class="active">
+                                <a class="" href=""> 360 View</a>
+                              </li>
+                              <li>Risk Assesment</li>
+                              <li>Endpoint Insights</li>
+                              <li>Application Insights</li>
+                              <li>Load Balancing Insights</li>
+                            </ul>
+                          </div>
+                          <!-- <span class="tooltip">Dashboard</span> -->
+                        </li>
+
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-user"></i>
+                            <span class="links_name">Protection</span>
+                          </a>
+                          <!-- <span class="tooltip">Protection</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-chat"></i>
+                            <span class="links_name">Endpoints</span>
+                          </a>
+                          <!-- <span class="tooltip">Messages</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-pie-chart-alt-2"></i>
+                            <span class="links_name">Inventory</span>
+                          </a>
+                          <!-- <span class="tooltip">Analytics</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-folder"></i>
+                            <span class="links_name"
+                              >Notifications and Logs</span
+                            >
+                          </a>
+                          <!-- <span class="tooltip">Files</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-cart-alt"></i>
+                            <span class="links_name">Integrations</span>
+                          </a>
+                          <!-- <span class="tooltip">Order</span> -->
+                        </li>
+                        <li class="border-0">
+                          <a href="#">
+                            <i class="bx bx-heart"></i>
+                            <span class="links_name">Reports</span>
+                          </a>
+                          <!-- <span class="tooltip">Saved</span> -->
+                        </li>
+
+                        <li class="profile border-0">
+                          <div class="profile-details">
+                            <!--<img src="profile.jpg" alt="profileImg">-->
+                            <div class="copy-right">
+                              <p class="my-5">
+                                <script type="text/javascript">
+                                  var d = new Date();
+                                  yr = d.getFullYear();
+                                  document.write(yr);
+                                </script>
+                                companyname inc
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- <img
+                    src="img/hamburger.svg"
+                    alt=""
+                    class="hamburger-mob hideshow"
+                  /> -->
+                    <ul class="head-logo border-lft border-rgt">
+                      <li id="notify"></li>
+                      <li id="bug"></li>
+                      <li id="setting"></li>
+                      <li id="help"></li>
+                      <li id="sunmoon" onclick="themeChange()"></li>
+                      <li class="hideshow">
+                        <div class="profile">
+                          <div class="dropdown">
+                            <a
+                              class="pro_dpdn"
+                              id="dropdownMenuButton1"
+                              data-toggle="dropdown"
+                              aria-expanded="false"
+                              ><img src="img/user_avtar.svg" alt="" />
+                              <span
+                                >Cameron Williamson<img
+                                  src="img/arrow_down.png"
+                                  alt=""
+                              /></span>
+                            </a>
+                            <ul
+                              class="dropdown-menu"
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              <li>
+                                <a class="dropdown-item" href="#">Action</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Another action</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Something else here</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <!-- <i
+              class="fas fa-moon"
+              onclick="themeChange()"
+              id="sunmoon"
+            ></i> -->
+                  </div>
+                </div>
+                <div class="col-md-6 hideshow1 p-0">
+                  <div class="profile">
+                    <ul class="pro-ul">
+                      <li id="user_avtar"></li>
+                      <li>C. Williamson</li>
+                      <li>
+                        <div class="dropdown">
+                          <a
+                            class="pro_dpdn"
+                            id="dropdownMenuButton1"
+                            data-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <img src="img/arrow_down.png" alt=""
+                          /></a>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <a class="dropdown-item" href="#">Action</a>
+
+                            <a class="dropdown-item" href="#">Another action</a>
+
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="home-body-sec">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <!-- header start -->
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 breadcrumb-p">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-ol m-0" id="breadcrumb">
+                  <li class="breadcrumb-img">
+                    <img src="img/breadcrumb.svg" alt="" />
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">Dashboard </a></li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    360 View
+                  </li>
+                </ol>
+              </nav>
+            </div>
+
+            <div class="col-md-12">
+              <div id="main">
+                <div class="filter">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div
+                          class="site-list"
+                          data-toggle="modal"
+                          data-target="#site"
+                        >
+                          <label for=""
+                            >Site 02<span class="total-site"
+                              >/03 <img src="img/arrow-down2.svg" alt=""
+                            /></span>
+                          </label>
+
+                          <ul>
+                            <li id="factory">
+                              <!-- <img src="img/wyandotte.svg" alt="" width="30" /> -->
+                            </li>
+                            <li class="selected-site-name">Wyandotte</li>
+                            <li>
+                              <img src="img/Close.svg" width="8" alt="" />
+                            </li>
+                          </ul>
+
+                          <ul>
+                            <li id="resident">
+                              <!-- <img src="img/redwood.svg" alt="" width="30" /> -->
+                            </li>
+                            <li class="selected-site-name">Redwood</li>
+                            <li>
+                              <img src="img/Close.svg" width="8" alt="" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="filter-icon">
+                          <ul>
+                            <li>
+                              <!-- <button
+                                class="btn rset-btn"
+                                
+                              >
+                                Reset
+                              </button> -->
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                style="fill: rgba(255, 255, 255, 1)"
+                                onClick="window.location.href=window.location.href"
+                              >
+                                <path
+                                  d="M10 11H7.101l.001-.009a4.956 4.956 0 0 1 .752-1.787 5.054 5.054 0 0 1 2.2-1.811c.302-.128.617-.226.938-.291a5.078 5.078 0 0 1 2.018 0 4.978 4.978 0 0 1 2.525 1.361l1.416-1.412a7.036 7.036 0 0 0-2.224-1.501 6.921 6.921 0 0 0-1.315-.408 7.079 7.079 0 0 0-2.819 0 6.94 6.94 0 0 0-1.316.409 7.04 7.04 0 0 0-3.08 2.534 6.978 6.978 0 0 0-1.054 2.505c-.028.135-.043.273-.063.41H2l4 4 4-4zm4 2h2.899l-.001.008a4.976 4.976 0 0 1-2.103 3.138 4.943 4.943 0 0 1-1.787.752 5.073 5.073 0 0 1-2.017 0 4.956 4.956 0 0 1-1.787-.752 5.072 5.072 0 0 1-.74-.61L7.05 16.95a7.032 7.032 0 0 0 2.225 1.5c.424.18.867.317 1.315.408a7.07 7.07 0 0 0 2.818 0 7.031 7.031 0 0 0 4.395-2.945 6.974 6.974 0 0 0 1.053-2.503c.027-.135.043-.273.063-.41H22l-4-4-4 4z"
+                                ></path>
+                              </svg>
+                            </li>
+                            <li>
+                              <div class="tooltip">
+                                <div
+                                  id="add"
+                                  data-toggle="modal"
+                                  data-target="#addmodal"
+                                ></div>
+                                <span class="tooltiptext t_p1"
+                                  >Add as new 360 View Dashboard</span
+                                >
+                              </div>
+                            </li>
+                            <li>
+                              <div class="tooltip">
+                                <a href="customize360view.html">
+                                  <div id="setting"></div>
+                                  <span class="tooltiptext t_p2"
+                                    >Customize 360 View Dashboard</span
+                                  ></a
+                                >
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-sec">
+                  <div class="drop">
+                    <div class="drop__container row" id="drop-items">
+                      <!-- small card widget start-->
+
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards1">
+                              <img src="img/status.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label class="m-0" for="">Status</label>
+                                <h4>InActive</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards2">
+                              <img src="img/TrustBinaries.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label class="m-0" for="">Trust Binaries</label>
+                                <h4>
+                                  2000
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards3">
+                              <img src="img/ts.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label class="m-0" for="">Trust Stores</label>
+                                <h4>
+                                  20
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards4">
+                              <img src="img/ts.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label class="m-0" for="">Trust Points</label>
+                                <h4>
+                                  20
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- small card widget end -->
+
+                      <!-- medium card start here -->
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="midium-card" id="mecards1">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  id="setting-dpdn1"
+                                  data-toggle="dropdown"
+                                  alt=""
+                                />
+                                <div
+                                  class="dropdown-menu"
+                                  aria-labelledby="setting-dpdn1"
+                                >
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#"
+                                    >Another action</a
+                                  >
+                                  <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                  >
+                                </div>
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img src="img/pd.svg" width="19" alt="" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Protected Devices</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">300</div>
+                                <div class="mid-list2">
+                                  <img src="img/arrow-down-white.svg" alt="" />
+                                  10%
+                                </div>
+                                <div class="mid-list3">
+                                  Last 24h
+                                  <img src="img/arrow-down2.svg" alt="" />
+                                </div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <!-- <ul class="mid-ul">
+                                <li class="mid-ul1">50 <span>Online</span></li>
+                                <li class="mid-ul2">30 <span>Offline</span></li>
+                                <li class="mid-ul3">20 <span>New</span></li>
+                              </ul> -->
+
+                                <table class="mid-table">
+                                  <thead>
+                                    <tr>
+                                      <th class="col">Type</th>
+                                      <th class="col">Applications</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="col">Online</td>
+                                      <td class="col mid-ul1">200</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">Offline</td>
+                                      <td class="col td4">90</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">New</td>
+                                      <td class="col td6">10</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="midium-card" id="mecards2">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  id="setting-dpdn2"
+                                  data-toggle="dropdown"
+                                  alt=""
+                                />
+                                <div
+                                  class="dropdown-menu"
+                                  aria-labelledby="setting-dpdn2"
+                                >
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#"
+                                    >Another action</a
+                                  >
+                                  <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                  >
+                                </div>
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img
+                                      src="img/ta_white.svg"
+                                      width="19"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Total Applications</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">100</div>
+                                <div class="mid-list2">
+                                  <img src="img/arrow-down-white.svg" alt="" />
+                                  10%
+                                </div>
+                                <div class="mid-list3">
+                                  Last 24h
+                                  <img src="img/arrow-down2.svg" alt="" />
+                                </div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <!-- <ul class="mid-ul">
+                                <li class="mid-ul1">50 <span>Online</span></li>
+                                <li class="mid-ul2">30 <span>Offline</span></li>
+                                <li class="mid-ul3">20 <span>New</span></li>
+                              </ul> -->
+
+                                <table class="mid-table">
+                                  <thead>
+                                    <tr>
+                                      <th class="col">Type</th>
+                                      <th class="col">Applications</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="col">Trusted</td>
+                                      <td class="col mid-ul1">60</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">Untrusted</td>
+                                      <td class="col td4">40</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">New</td>
+                                      <td class="col td6">20</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="midium-card" id="mecards3">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  id="setting-dpdn3"
+                                  data-toggle="dropdown"
+                                  alt=""
+                                />
+                                <div
+                                  class="dropdown-menu"
+                                  aria-labelledby="setting-dpdn3"
+                                >
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#"
+                                    >Another action</a
+                                  >
+                                  <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                  >
+                                </div>
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div class="donut__slice donut__slice__3"></div>
+                                <div class="donut__slice donut__slice__4"></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img src="img/risk.svg" width="19" alt="" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Devices at Risk</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">Top 3</div>
+                              </div>
+
+                              <!-- <ul class="mid-ul">
+                                  <li class="mid-ul1">50 <span>Online</span></li>
+                                  <li class="mid-ul2">30 <span>Offline</span></li>
+                                  <li class="mid-ul3">20 <span>New</span></li>
+                                </ul> -->
+
+                              <div class="col-md-12">
+                                <table class="mid-table">
+                                  <thead>
+                                    <tr>
+                                      <th class="col">IP</th>
+                                      <th class="col">Vulnerabilities</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td class="col">192.168.1.122</td>
+                                      <td class="col td2">60</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">192.168.1.122</td>
+                                      <td class="col td4">40</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="col">192.168.1.122</td>
+                                      <td class="col td6">20</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-3 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="midium-card" id="mecards4">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  id="setting-dpdn4"
+                                  data-toggle="dropdown"
+                                  alt=""
+                                />
+                                <div
+                                  class="dropdown-menu"
+                                  aria-labelledby="setting-dpdn4"
+                                >
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#"
+                                    >Another action</a
+                                  >
+                                  <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                  >
+                                </div>
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div class="donut__slice donut__slice__3"></div>
+                                <div class="donut__slice donut__slice__4"></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img
+                                      src="img/red_bud.svg"
+                                      width="19"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Attack / Threats</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">Top 3</div>
+                              </div>
+
+                              <!-- <ul class="mid-ul">
+                                  <li class="mid-ul1">50 <span>Online</span></li>
+                                  <li class="mid-ul2">30 <span>Offline</span></li>
+                                  <li class="mid-ul3">20 <span>New</span></li>
+                                </ul> -->
+                              <table class="mid-table">
+                                <thead>
+                                  <tr>
+                                    <th class="col">Treat</th>
+                                    <th class="col">Attacks</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="col">Revlective Injection</td>
+                                    <td class="col td2">50</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">No trust</td>
+                                    <td class="col td4">30</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">Unauthorised Binary</td>
+                                    <td class="col td6">20</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- medium card nend here -->
+                      <!-- large card start here -->
+                      <div class="drop__card col-md-6 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 p-0">
+                            <div class="large-card">
+                              <div class="lg-card" id="lgcard1">
+                                <div class="new-devices">
+                                  <img src="img/new-device-tlogo.svg" alt="" />
+
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <h5 class="m-0" id="lastDevices1">
+                                          New Devices
+                                        </h5>
+                                      </div>
+                                      <div class="col-md-5">
+                                        <div class="dropdown">
+                                          <a
+                                            class=""
+                                            type="button"
+                                            id="dropdownMenuButton"
+                                            data-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <p>
+                                              Last 24h
+                                              <img
+                                                src="img/arrow-down2.svg"
+                                                alt=""
+                                              />
+                                            </p>
+                                          </a>
+                                          <div
+                                            class="dropdown-menu last-h-dpdn"
+                                            aria-labelledby="dropdownMenuButton"
+                                          >
+                                            <a class="dropdown-item" href="#"
+                                              >Last 1 week</a
+                                            >
+                                            <a class="dropdown-item" href="#"
+                                              >Last 1 month</a
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-12">
+                                        <a href="">
+                                          <h3 class="total-d">
+                                            10
+                                            <span
+                                              ><img
+                                                src="img/arrow-up-white.svg"
+                                                alt=""
+                                              />
+                                              10%</span
+                                            >
+                                          </h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <!-- <p>New Devices</p> -->
+                                  </div>
+                                  <div class="dropdown">
+                                    <img
+                                      src="img/setting.svg"
+                                      alt=""
+                                      id="setting-dpdn5"
+                                      data-toggle="dropdown"
+                                    />
+                                    <div
+                                      class="dropdown-menu"
+                                      aria-labelledby="setting-dpdn5"
+                                    >
+                                      <a class="dropdown-item" href="#"
+                                        >Action</a
+                                      >
+                                      <a class="dropdown-item" href="#"
+                                        >Another action</a
+                                      >
+                                      <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="lg-card-table">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Risk</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">OS</th>
+                                        <th scope="col">IP</th>
+                                        <th scope="col">Device Group</th>
+                                        <th scope="col">Policy</th>
+                                        <th scope="col">Apps</th>
+                                        <th scope="col">Actions</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <div
+                                            class="donut table_donut"
+                                            style="
+                                              --first: 0.7;
+                                              --second: 0.43;
+                                              --third: 0.32;
+                                              --fourth: 0.22;
+                                            "
+                                          >
+                                            <div
+                                              class="donut__slice donut__slice__first"
+                                            ></div>
+                                            <div
+                                              class="donut__slice donut__slice__second"
+                                            ></div>
+                                            <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                            <div class="donut__label">
+                                              <div class="donut__label__sub1">
+                                                50
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>JIT Terminal</td>
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>192.168.1.122</td>
+                                        <td>Unassigned</td>
+                                        <td>Default</td>
+                                        <td>10</td>
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-2">
+                                        <td scope="row">
+                                          <div
+                                            class="donut table_donut"
+                                            style="
+                                              --first: 0.7;
+                                              --second: 0.43;
+                                              --third: 0.32;
+                                              --fourth: 0.22;
+                                            "
+                                          >
+                                            <div
+                                              class="donut__slice donut__slice__first"
+                                            ></div>
+                                            <div
+                                              class="donut__slice donut__slice__second"
+                                            ></div>
+                                            <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                            <div class="donut__label">
+                                              <div class="donut__label__sub1">
+                                                50
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>JIT Terminal</td>
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>192.168.1.122</td>
+                                        <td>Unassigned</td>
+                                        <td>Default</td>
+                                        <td>10</td>
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-2">
+                                        <td scope="row">
+                                          <div
+                                            class="donut table_donut"
+                                            style="
+                                              --first: 0.7;
+                                              --second: 0.43;
+                                              --third: 0.32;
+                                              --fourth: 0.22;
+                                            "
+                                          >
+                                            <div
+                                              class="donut__slice donut__slice__first"
+                                            ></div>
+                                            <div
+                                              class="donut__slice donut__slice__second"
+                                            ></div>
+                                            <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                            <div class="donut__label">
+                                              <div class="donut__label__sub1">
+                                                50
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>JIT Terminal</td>
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>192.168.1.122</td>
+                                        <td>Unassigned</td>
+                                        <td>Default</td>
+                                        <td>10</td>
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-2">
+                                        <td scope="row">
+                                          <div
+                                            class="donut table_donut"
+                                            style="
+                                              --first: 0.7;
+                                              --second: 0.43;
+                                              --third: 0.32;
+                                              --fourth: 0.22;
+                                            "
+                                          >
+                                            <div
+                                              class="donut__slice donut__slice__first"
+                                            ></div>
+                                            <div
+                                              class="donut__slice donut__slice__second"
+                                            ></div>
+                                            <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                            <div class="donut__label">
+                                              <div class="donut__label__sub1">
+                                                50
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>JIT Terminal</td>
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>192.168.1.122</td>
+                                        <td>Unassigned</td>
+                                        <td>Default</td>
+                                        <td>10</td>
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-2">
+                                        <td scope="row">
+                                          <div
+                                            class="donut table_donut"
+                                            style="
+                                              --first: 0.7;
+                                              --second: 0.43;
+                                              --third: 0.32;
+                                              --fourth: 0.22;
+                                            "
+                                          >
+                                            <div
+                                              class="donut__slice donut__slice__first"
+                                            ></div>
+                                            <div
+                                              class="donut__slice donut__slice__second"
+                                            ></div>
+                                            <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                            <div class="donut__label">
+                                              <div class="donut__label__sub1">
+                                                50
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>JIT Terminal</td>
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>192.168.1.122</td>
+                                        <td>Unassigned</td>
+                                        <td>Default</td>
+                                        <td>10</td>
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="drop__card col-md-6 mt-1 mb-1">
+                        <div class="row">
+                          <div class="col-md-12 p-0">
+                            <div class="large-card">
+                              <div class="lg-card" id="lgcard2">
+                                <div class="new-devices">
+                                  <img src="img/new-device-tlogo.svg" alt="" />
+
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <h5 class="m-0" id="lastDevices1">
+                                          Latest Alerts
+                                        </h5>
+                                      </div>
+                                      <div class="col-md-5">
+                                        <div class="dropdown">
+                                          <a
+                                            class=""
+                                            type="button"
+                                            id="dropdownMenuButton"
+                                            data-toggle="dropdown"
+                                            aria-expanded="false"
+                                          >
+                                            <p>
+                                              Last 24h
+                                              <img
+                                                src="img/arrow-down2.svg"
+                                                alt=""
+                                              />
+                                            </p>
+                                          </a>
+                                          <div
+                                            class="dropdown-menu last-h-dpdn"
+                                            aria-labelledby="dropdownMenuButton"
+                                          >
+                                            <a class="dropdown-item" href="#"
+                                              >Last 1 week</a
+                                            >
+                                            <a class="dropdown-item" href="#"
+                                              >Last 1 month</a
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-12">
+                                        <a href="">
+                                          <h3 class="total-d">
+                                            10
+                                            <span
+                                              ><img
+                                                src="img/arrow-up-white.svg"
+                                                alt=""
+                                              />
+                                              10%</span
+                                            >
+                                          </h3>
+                                        </a>
+                                      </div>
+                                    </div>
+                                    <!-- <p>New Devices</p> -->
+                                  </div>
+                                  <div class="dropdown">
+                                    <img
+                                      src="img/setting.svg"
+                                      alt=""
+                                      id="setting-dpdn6"
+                                      data-toggle="dropdown"
+                                    />
+                                    <div
+                                      class="dropdown-menu"
+                                      aria-labelledby="setting-dpdn6"
+                                    >
+                                      <a class="dropdown-item" href="#"
+                                        >Action</a
+                                      >
+                                      <a class="dropdown-item" href="#"
+                                        >Another action</a
+                                      >
+                                      <a class="dropdown-item" href="#"
+                                        >Something else here</a
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="lg-card-table">
+                                  <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">Binary</th>
+                                        <th scope="col">Devices</th>
+                                        <th scope="col">Update Date</th>
+                                        <th scope="col">Size</th>
+                                        <th scope="col">Actions</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>MS Win 8</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>MS Win S 2011</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/chrome.svg" alt="" />
+                                        </td>
+                                        <td>Chrome v95.11</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/notepad.svg" alt="" />
+                                        </td>
+                                        <td>Notepad</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/teams.svg" alt="" />
+                                        </td>
+                                        <td>MS Teams</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/edge.svg" alt="" />
+                                        </td>
+                                        <td>MS Edge</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                      <tr class="tbl-row-1">
+                                        <td scope="row">
+                                          <img src="img/os1.svg" alt="" />
+                                        </td>
+                                        <td>MS Win 8</td>
+
+                                        <td>10</td>
+                                        <td>20-12-21 9:30 am</td>
+                                        <td>Default</td>
+
+                                        <td class="action-icon">
+                                          <a href="">
+                                            <img src="img/edit.svg" alt=""
+                                          /></a>
+                                          <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                          <a href="">
+                                            <img src="img/play.svg" alt=""
+                                          /></a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- large card end here -->
+                    </div>
+
+                    <!-- tab view -->
+                    <div class="row drop__container2" id="drop-items2">
+                      <div class="drop__card col-md-6">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards1">
+                              <img src="img/status.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label for="">Status</label>
+                                <h4>InActive</h4>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 p-2">
+                            <div class="midium-card" id="mecards1">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img src="img/pd.svg" width="19" alt="" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Protected Devices</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">300</div>
+                                <div class="mid-list2">
+                                  <img src="img/arrow-down-white.svg" alt="" />
+                                  10%
+                                </div>
+                                <div class="mid-list3">
+                                  Last 24h
+                                  <img src="img/arrow-down2.svg" alt="" />
+                                </div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <ul class="mid-ul">
+                                  <li class="mid-ul1">
+                                    200 <span>Online</span>
+                                  </li>
+                                  <li class="mid-ul2">
+                                    90 <span>Offline</span>
+                                  </li>
+                                  <li class="mid-ul3">10 <span>New</span></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-6">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards2">
+                              <img src="img/TrustBinaries.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label for="">Trust Binaries</label>
+                                <h4>
+                                  2000
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 p-2">
+                            <div class="midium-card" id="mecards2">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img
+                                      src="img/ta_white.svg"
+                                      width="19"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Total Applications</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">100</div>
+                                <div class="mid-list2">
+                                  <img src="img/arrow-down-white.svg" alt="" />
+                                  10%
+                                </div>
+                                <div class="mid-list3">
+                                  Last 24h
+                                  <img src="img/arrow-down2.svg" alt="" />
+                                </div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <ul class="mid-ul">
+                                  <li class="mid-ul1">
+                                    50 <span>Online</span>
+                                  </li>
+                                  <li class="mid-ul2">
+                                    30 <span>Offline</span>
+                                  </li>
+                                  <li class="mid-ul3">20 <span>New</span></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="drop__card col-md-6">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards3">
+                              <img src="img/ts.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label for="">Trust Stores</label>
+                                <h4>
+                                  20
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 p-2">
+                            <div class="midium-card" id="mecards3">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img src="img/risk.svg" width="19" alt="" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Devices at Risk</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">Top 3</div>
+                              </div>
+
+                              <!-- <ul class="mid-ul">
+                                  <li class="mid-ul1">50 <span>Online</span></li>
+                                  <li class="mid-ul2">30 <span>Offline</span></li>
+                                  <li class="mid-ul3">20 <span>New</span></li>
+                                </ul> -->
+
+                              <table class="mid-table">
+                                <thead>
+                                  <tr>
+                                    <th class="col">IP</th>
+                                    <th class="col">Vulnerabilities</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="col">192.168.1.122</td>
+                                    <td class="col td2">60</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">192.168.1.122</td>
+                                    <td class="col td4">40</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">192.168.1.122</td>
+                                    <td class="col td6">20</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-6">
+                        <div class="row">
+                          <div class="col-md-12 pl-2 pr-2">
+                            <div class="small-card" id="smcards4">
+                              <img src="img/ts.svg" alt="status" />
+                              <div class="sm-lable-card">
+                                <label for="">Trust Points</label>
+                                <h4>
+                                  20
+                                  <span
+                                    ><img
+                                      src="img/arrow-up.svg"
+                                      alt=""
+                                    />10%</span
+                                  >
+                                </h4>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 p-2">
+                            <div class="midium-card" id="mecards4">
+                              <div class="container-fluid">
+                                <img
+                                  class="mid-card-setting"
+                                  src="img/setting.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div
+                                class="donut"
+                                style="
+                                  --first: 0.7;
+                                  --second: 0.43;
+                                  --third: 0.32;
+                                  --fourth: 0.22;
+                                "
+                              >
+                                <div
+                                  class="donut__slice donut__slice__first"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__second"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__third"
+                                ></div>
+                                <div
+                                  class="donut__slice donut__slice__fourth"
+                                ></div>
+
+                                <div class="donut__label">
+                                  <div class="donut__label__sub">
+                                    <img
+                                      src="img/red_bud.svg"
+                                      width="19"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+
+                              <label for="">Attack / Threats</label>
+
+                              <div class="row mid-list-row">
+                                <div class="mid-list1">Top 3</div>
+                              </div>
+
+                              <!-- <ul class="mid-ul">
+                                  <li class="mid-ul1">50 <span>Online</span></li>
+                                  <li class="mid-ul2">30 <span>Offline</span></li>
+                                  <li class="mid-ul3">20 <span>New</span></li>
+                                </ul> -->
+                              <table class="mid-table">
+                                <thead>
+                                  <tr>
+                                    <th class="col">Treat</th>
+                                    <th class="col">Attacks</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="col">Revlective Injection</td>
+                                    <td class="col td2">50</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">No trust</td>
+                                    <td class="col td4">30</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="col">Unauthorised Binary</td>
+                                    <td class="col td6">20</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-12">
+                        <div class="row">
+                          <div class="col-md-12 large-card">
+                            <div class="lg-card" id="lgcard1">
+                              <div class="new-devices">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <img
+                                      src="img/new-device-tlogo.svg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="col-md-5">
+                                      <a
+                                        href="#lastDevices1"
+                                        data-toggle="collapse"
+                                      >
+                                        <p>
+                                          Last 24h
+                                          <img
+                                            src="img/arrow-down2.svg"
+                                            alt=""
+                                          /></p
+                                      ></a>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <h5 class="collapse" id="lastDevices1">
+                                        New Devices
+                                      </h5>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                      <a href="">
+                                        <h3 class="total-d">
+                                          10
+                                          <span
+                                            ><img
+                                              src="img/arrow-up-white.svg"
+                                              alt=""
+                                            />
+                                            10%</span
+                                          >
+                                        </h3>
+                                      </a>
+                                    </div>
+                                    <!-- <p>New Devices</p> -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="lg-card-table">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Risk</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">OS</th>
+                                      <th scope="col">IP</th>
+                                      <th scope="col">Device Group</th>
+                                      <th scope="col">Policy</th>
+                                      <th scope="col">Apps</th>
+                                      <th scope="col">Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="tbl-row-1">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drop__card col-md-12">
+                        <div class="row">
+                          <div class="col-md-12 large-card">
+                            <div class="lg-card" id="lgcard2">
+                              <div class="new-devices">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <img src="img/latest-alert.svg" alt="" />
+                                  </div>
+                                  <div class="col-md-9">
+                                    <a
+                                      href="#lastDevices2"
+                                      data-toggle="collapse"
+                                    >
+                                      <p>
+                                        Last 24h
+                                        <img
+                                          src="img/arrow-down2.svg"
+                                          alt=""
+                                        /></p
+                                    ></a>
+                                    <h5 class="collapse" id="lastDevices2">
+                                      New Devices
+                                    </h5>
+                                    <a href="">
+                                      <h3 class="total-d">
+                                        10
+                                        <span
+                                          ><img
+                                            src="img/arrow-up-white.svg"
+                                            alt=""
+                                          />
+                                          10%</span
+                                        >
+                                      </h3></a
+                                    >
+                                    <!-- <p>New Devices</p> -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="lg-card-table">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Risk</th>
+                                      <th scope="col">Name</th>
+                                      <th scope="col">OS</th>
+                                      <th scope="col">IP</th>
+                                      <th scope="col">Device Group</th>
+                                      <th scope="col">Policy</th>
+                                      <th scope="col">Apps</th>
+                                      <th scope="col">Actions</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr class="tbl-row-1">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                    <tr class="tbl-row-2">
+                                      <td scope="row">
+                                        <div
+                                          class="donut table_donut"
+                                          style="
+                                            --first: 0.7;
+                                            --second: 0.43;
+                                            --third: 0.32;
+                                            --fourth: 0.22;
+                                          "
+                                        >
+                                          <div
+                                            class="donut__slice donut__slice__first"
+                                          ></div>
+                                          <div
+                                            class="donut__slice donut__slice__second"
+                                          ></div>
+                                          <!-- <div
+                                          class="donut__slice donut__slice__third"
+                                        ></div>
+                                        <div
+                                          class="donut__slice donut__slice__fourth"
+                                        ></div> -->
+
+                                          <div class="donut__label">
+                                            <div class="donut__label__sub1">
+                                              50
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>JIT Terminal</td>
+                                      <td scope="row">
+                                        <img src="img/os1.svg" alt="" />
+                                      </td>
+                                      <td>192.168.1.122</td>
+                                      <td>Unassigned</td>
+                                      <td>Default</td>
+                                      <td>10</td>
+                                      <td class="action-icon">
+                                        <a href="">
+                                          <img src="img/edit.svg" alt=""
+                                        /></a>
+                                        <!-- <a href="">
+                                        <img src="img/add.svg" alt=""
+                                      /></a> -->
+                                        <a href="">
+                                          <img src="img/play.svg" alt=""
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- <div class="row pl-3 pr-3 lg-tab">
+                  <div class="col-md-6">
+                    <div class="row"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row"></div>
+                  </div>
+                </div> -->
+
+                  <!-- <div class="row lg-tab2">
+                  <div class="col-md-12"></div>
+                  <div class="col-md-12"></div>
+                </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="sidenav" class="sidebarRgt hideshow1">
+      <div class="right-sec">
+        <div id="slidebtn" class="logo-details">
+          <img class="bx bx-menu" src="img/hamburger.svg" id="btn2" alt="" />
+        </div>
+
+        <div class="rgtsec-body1">
+          <div class="col-md-12">
+            <div
+              class="donut rgt-donut"
+              style="
+                --first: 0.7;
+                --second: 0.43;
+                --third: 0.32;
+                --fourth: 0.22;
+              "
+            >
+              <div class="donut__slice donut__slice__first"></div>
+              <div class="donut__slice donut__slice__second"></div>
+              <div class="donut__slice donut__slice__third"></div>
+              <div class="donut__slice donut__slice__fourth"></div>
+
+              <div class="donut__label">
+                <div class="donut__label__sub">
+                  <img src="img/notification.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 rgtnoti">
+            <div class="row align-items-baseline">
+              <div class="col-md-6">
+                <h6 class="rgt-notification">Notifications</h6>
+              </div>
+              <div class="col-md-6">
+                <div class="notification-count">
+                  <h6>
+                    30<span>
+                      Last 24h <img src="img/arrow-down2.svg" alt=""
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-md-12 p-3">
+                <table>
+                  <tbody class="rgt-ul">
+                    <tr class="mid-ul1">
+                      <td class="td_1">30</td>
+                      <td class="td_2">System Notifications</td>
+                    </tr>
+                    <tr class="mid-ul2">
+                      <td class="td_1">15</td>
+                      <td class="td_2">Attacks & Threats</td>
+                    </tr>
+                    <tr class="mid-ul3">
+                      <td class="td_1">05</td>
+                      <td class="td_2">Trust binary changes</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="col-md-12">
+                  <div class="all-notify">
+                    <button type="button" class="btn all-notify-btn">
+                      All Notifications
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="recent-activity">
+                  <h6 class="rgt-notification">Recent Activity</h6>
+
+                  <ul>
+                    <li class="li-red">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-green">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-red">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-green">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <!-- <li class="li-red">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-green">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rgtsec-body2">
+          <div class="rgt-noti">
+            <img src="img/notification.svg" alt="" />
+            <h5>50</h5>
+            <p>Notifications</p>
+          </div>
+
+          <div class="rgt-stats">
+            <p>Last 24 hrs</p>
+            <div class="rgt-sn rgt-stats-li">
+              <h6>30</h6>
+              <lable>System Notifications</lable>
+            </div>
+            <div class="rgt-at rgt-stats-li">
+              <h6>15</h6>
+              <lable>Attacks & Threats</lable>
+            </div>
+            <div class="rgt-tbc rgt-stats-li">
+              <h6>05</h6>
+              <lable>Trust Binary Changes</lable>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- link script -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/donutchart.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/dragAndDrop.js"></script>
+
+    <script src="js/sidebar-rgt.js"></script>
+    <script src="js/toast.js"></script>
+  </body>
+</html>

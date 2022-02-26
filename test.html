@@ -1,0 +1,279 @@
+!<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #div1,
+      #div2 {
+        float: left;
+        width: 100px;
+        height: 35px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Drag and Drop</h2>
+    <p>Drag the image back and forth between the two div elements.</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img
+        src="img_w3slogo.gif"
+        draggable="true"
+        ondragstart="drag(event)"
+        id="drag1"
+        width="88"
+        height="31"
+      />
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <!-- ############################ -->
+    <div class="col-md-12">
+      <div class="row">
+        <div
+          id="widget-column1"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <img
+            src="img/alert-warning.svg"
+            draggable="true"
+            ondragstart="drag(event)"
+            id="drag1"
+          />
+          <!-- <div class="widget-column">
+        <h4>Add widget here</h4>
+      </div> -->
+        </div>
+        <div
+          id="widget-column2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        ></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="drop__card col-md-12 mt-1 mb-1">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="midium-card" id="mecards2">
+              <div class="container-fluid">
+                <img
+                  class="mid-card-setting"
+                  src="img/threedot.svg"
+                  id="setting-dpdn2"
+                  data-toggle="dropdown"
+                  alt=""
+                />
+                <div
+                  class="dropdown-menu setting-dpdn-small"
+                  aria-labelledby="setting-dpdn2"
+                >
+                  <a class="dropdown-item" href="#"
+                    ><img src="img/edit-widget.svg" alt="" /> Edit</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-target="#delete"
+                    data-toggle="modal"
+                    ><img src="img/delete.svg" alt="" />Delete</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-target="#reportModal"
+                    data-toggle="modal"
+                    ><img src="img/report-widget.svg" alt="" />Report Bug</a
+                  >
+                </div>
+              </div>
+              <div
+                class="donut"
+                style="
+                  --first: 0.7;
+                  --second: 0.43;
+                  --third: 0.32;
+                  --fourth: 0.22;
+                "
+              >
+                <div class="donut__slice donut__slice__first"></div>
+                <div class="donut__slice donut__slice__second"></div>
+                <div class="donut__slice donut__slice__third"></div>
+                <div class="donut__slice donut__slice__fourth"></div>
+
+                <div class="donut__label">
+                  <div class="donut__label__sub">
+                    <img src="img/pd.svg" width="19" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <label for="">Total Applications</label>
+
+              <div class="row mid-list-row">
+                <div class="mid-list1">100</div>
+                <div class="mid-list2">
+                  <img src="img/arrow-down-white.svg" alt="" />
+                  10%
+                </div>
+                <div class="mid-list3">
+                  Last 24h
+                  <img src="img/arrow-down2.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <table class="mid-table">
+                  <thead>
+                    <tr>
+                      <th class="col">Type</th>
+                      <th class="col">Applications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col">Trusted</td>
+                      <td class="col mid-ul1">60</td>
+                    </tr>
+                    <tr>
+                      <td class="col">Untrusted</td>
+                      <td class="col td4">40</td>
+                    </tr>
+                    <tr>
+                      <td class="col">New</td>
+                      <td class="col td6">20</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="drop__card col-md-12 mt-1 mb-1">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="midium-card" id="mecards2">
+              <div class="container-fluid">
+                <img
+                  class="mid-card-setting"
+                  src="img/threedot.svg"
+                  id="setting-dpdn2"
+                  data-toggle="dropdown"
+                  alt=""
+                />
+                <div
+                  class="dropdown-menu setting-dpdn-small"
+                  aria-labelledby="setting-dpdn2"
+                >
+                  <a class="dropdown-item" href="#"
+                    ><img src="img/edit-widget.svg" alt="" /> Edit</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-target="#delete"
+                    data-toggle="modal"
+                    ><img src="img/delete.svg" alt="" />Delete</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-target="#reportModal"
+                    data-toggle="modal"
+                    ><img src="img/report-widget.svg" alt="" />Report Bug</a
+                  >
+                </div>
+              </div>
+              <div
+                class="donut"
+                style="
+                  --first: 0.7;
+                  --second: 0.43;
+                  --third: 0.32;
+                  --fourth: 0.22;
+                "
+              >
+                <div class="donut__slice donut__slice__first"></div>
+                <div class="donut__slice donut__slice__second"></div>
+                <div class="donut__slice donut__slice__third"></div>
+                <div class="donut__slice donut__slice__fourth"></div>
+
+                <div class="donut__label">
+                  <div class="donut__label__sub">
+                    <img src="img/pd.svg" width="19" alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <label for="">Total Applications</label>
+
+              <div class="row mid-list-row">
+                <div class="mid-list1">100</div>
+                <div class="mid-list2">
+                  <img src="img/arrow-down-white.svg" alt="" />
+                  10%
+                </div>
+                <div class="mid-list3">
+                  Last 24h
+                  <img src="img/arrow-down2.svg" alt="" />
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <!-- <ul class="mid-ul">
+            <li class="mid-ul1">50 <span>Online</span></li>
+            <li class="mid-ul2">30 <span>Offline</span></li>
+            <li class="mid-ul3">20 <span>New</span></li>
+          </ul> -->
+
+                <table class="mid-table">
+                  <thead>
+                    <tr>
+                      <th class="col">Type</th>
+                      <th class="col">Applications</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="col">Trusted</td>
+                      <td class="col mid-ul1">60</td>
+                    </tr>
+                    <tr>
+                      <td class="col">Untrusted</td>
+                      <td class="col td4">40</td>
+                    </tr>
+                    <tr>
+                      <td class="col">New</td>
+                      <td class="col td6">20</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

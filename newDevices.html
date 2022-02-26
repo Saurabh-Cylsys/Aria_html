@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/new-device.css" />
+    <link rel="stylesheet" href="css/dashboard360.css" />
+    <link rel="stylesheet" href="css/newd-donautchard.css" />
+    <link rel="stylesheet" href="css/sidebar-rgt.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <title>New Devices</title>
+
+    <style>
+      .sidebarRgt {
+        height: 80vh;
+        width: 78px;
+        position: fixed;
+        z-index: 999;
+        top: 112px;
+        right: 0;
+        /* overflow-x: hidden; */
+        transition: 0.5s;
+        padding: 6px 0;
+        /* background: #061320; */
+        /* border: 0.5px solid rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px; */
+      }
+
+      #main {
+        transition: 0.5s;
+        /* background-color: white; */
+        padding-right: 74px;
+      }
+      @media (max-width: 600px) {
+        #main {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sidebar hideshow1" id="sidebar">
+      <div class="logo-details">
+        <!-- <i class="bx bxl-c-plus-plus icon"></i> -->
+        <div class="logo_name"><img src="img/logo.svg" alt="" /></div>
+        <!-- <i class="bx bx-menu" id="btn"></i> -->
+        <img class="bx bx-menu" src="img/hamburger.svg" id="btn" alt="" />
+      </div>
+      <div class="row cur-row">
+        <div class="status">
+          <a data-toggle="collapse" href="#status">
+            <span class="links_name"
+              ><span class="stats">Stats: Last 24 hours</span>
+            </span>
+            <div class="status-imgs">
+              <span>
+                <img src="img/status-i1.svg" alt="" />
+                <h6>300</h6>
+              </span>
+              <span>
+                <img src="img/status-i2.svg" alt="" />
+                <h6>100</h6>
+              </span>
+              <img src="img/arrow-down2.svg" alt="" />
+            </div>
+          </a>
+          <div class="collapse" id="status">
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">300</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-7">100</div>
+                          <div class="col-md-5 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="prev"
+              >
+                <img src="img/left-arrow.svg" alt="" />
+                <span class="sr-only">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-target="#carouselExampleIndicators"
+                data-slide="next"
+              >
+                <img src="img/right-arrow.svg" alt="" />
+                <span class="sr-only">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 p-1 status-bg">
+          <div class="status1">
+            <a data-toggle="collapse" href="#status">
+              <span class="links_name"
+                ><span class="last-s">Last 24 hrs</span>
+              </span>
+              <!-- <div class="status-imgs">
+                <span>
+                  <img src="img/status-i1.svg" alt="" />
+                  <h6>300</h6>
+                </span>
+                <span>
+                  <img src="img/status-i2.svg" alt="" />
+                  <h6>100</h6>
+                </span>
+                <img src="img/arrow-down2.svg" alt="" />
+              </div> -->
+            </a>
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide mycarousel"
+              data-ride="carousel"
+            >
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+
+                        <div class="row pe-row">
+                          <div class="col-md-12">300</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="card mycard" style="width: 18rem">
+                        <img src="img/ta.svg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                          <h5 class="card-title">Trusted Applicants</h5>
+                          <div class="row pe-row">
+                            <div class="col-md-7">100</div>
+                            <div class="col-md-5 pe-col-5">+14</div>
+                          </div>
+                        </div>
+                      </div> -->
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <!-- <div class="card mycard" style="width: 18rem">
+                        <img src="img/ta.svg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                          <h5 class="card-title">Protected Endpoints</h5>
+                          <div class="row pe-row">
+                            <div class="col-md-7">300</div>
+                            <div class="col-md-5 pe-col-5">+14</div>
+                          </div>
+                        </div>
+                      </div> -->
+
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Trusted Applicants</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">100</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="col-md-12 d-flex p-0">
+                    <div class="card mycard" style="width: 18rem">
+                      <img src="img/ta.svg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <h5 class="card-title">Protected Endpoints</h5>
+                        <div class="row pe-row">
+                          <div class="col-md-12">300</div>
+                          <div class="col-md-12 pe-col-5">+14</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <div class="card mycard" style="width: 18rem">
+                        <img src="img/ta.svg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                          <h5 class="card-title">Trusted Applicants</h5>
+                          <div class="row pe-row">
+                            <div class="col-md-7">100</div>
+                            <div class="col-md-5 pe-col-5">+14</div>
+                          </div>
+                        </div>
+                      </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-target="#carouselExampleIndicators"
+                  data-slide="prev"
+                >
+                  <img src="img/left-arrow.svg" alt="" />
+                  <span class="sr-only">Previous</span>
+                </button> -->
+              <!-- <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-target="#carouselExampleIndicators"
+                  data-slide="next"
+                >
+                  <img src="img/right-arrow.svg" alt="" />
+                  <span class="sr-only">Next</span>
+                </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li class="pb-3 pt-2">
+          <a data-toggle="collapse" href="#dashboard">
+            <img src="img/dashboard.svg" alt="" />
+            <span class="links_name">Dashboard</span>
+          </a>
+          <div class="collapse" id="dashboard">
+            <ul class="col-list">
+              <li class="active">
+                <a class="" href="index.html">
+                  360 View<span class="active-col-list"></span
+                ></a>
+              </li>
+              <li>
+                <a class="" href=""> Risk Assesment</a>
+              </li>
+              <li><a class="" href="">Endpoint Insights</a></li>
+              <li><a class="" href="">Application Insights</a></li>
+              <li><a class="" href="">Load Balancing Insights</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Dashboard</span> -->
+        </li>
+
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#protection">
+            <img src="img/protection.svg" alt="" />
+            <span class="links_name">Protection</span>
+          </a>
+          <div class="collapse" id="protection">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Protection Policies</a>
+              </li>
+              <li>
+                <a class="" href=""> Forensics</a>
+              </li>
+              <li><a class="" href="">Trust Stores</a></li>
+              <li><a class="" href="">Trust Binaries</a></li>
+              <li><a class="" href="">Trust Points</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#endpoints">
+            <img src="img/endpoints.svg" alt="" />
+            <span class="links_name">Endpoints</span>
+          </a>
+          <div class="collapse" id="endpoints">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Devices</a>
+              </li>
+              <li>
+                <a class="" href=""> Devices Groups</a>
+              </li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#inventry">
+            <img src="img/inventory.svg" alt="" />
+            <span class="links_name">Inventory</span>
+          </a>
+          <div class="collapse" id="inventry">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Applications</a>
+              </li>
+              <li>
+                <a class="" href=""> Platforms</a>
+              </li>
+              <li><a class="" href="">Endpoint</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#notification">
+            <img src="img/left_notification.svg" alt="" />
+            <span class="links_name">Notifications & Logs</span>
+          </a>
+          <div class="collapse" id="notification">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Security alerts & notifications</a>
+              </li>
+              <li>
+                <a class="" href=""> System messages</a>
+              </li>
+              <li><a class="" href="">Audit trail logs</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#integration">
+            <img src="img/integration.svg" alt="" />
+            <span class="links_name">Integration</span>
+          </a>
+          <div class="collapse" id="integration">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Rest</a>
+              </li>
+              <li>
+                <a class="" href=""> Syslog</a>
+              </li>
+              <li><a class="" href="">Splunk</a></li>
+              <li><a class="" href="">Other</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+        <li class="pb-3 pt-3">
+          <a data-toggle="collapse" href="#reports">
+            <img src="img/report.svg" alt="" width="18" />
+            <span class="links_name">Reports</span>
+          </a>
+          <div class="collapse" id="reports">
+            <ul class="col-list">
+              <li class="">
+                <a class="" href=""> Report 1</a>
+              </li>
+              <li>
+                <a class="" href=""> Report 2</a>
+              </li>
+              <li><a class="" href="">Report 3</a></li>
+              <li><a class="" href="">Report 4</a></li>
+              <li><a class="" href="">Report 5</a></li>
+            </ul>
+          </div>
+          <!-- <span class="tooltip">Protection</span> -->
+        </li>
+
+        <li class="profile border-0">
+          <div class="profile-details">
+            <!--<img src="profile.jpg" alt="profileImg">-->
+            <div class="copy-right" id="cr">
+              <p class="my-5">
+                &copy;
+                <script type="text/javascript">
+                  var d = new Date();
+                  yr = d.getFullYear();
+                  document.write(yr);
+                </script>
+                companyname inc
+              </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="sidenav" class="sidebarRgt hideshow1">
+      <div class="right-sec">
+        <div id="slidebtn" class="logo-details">
+          <img class="bx bx-menu" src="img/hamburger.svg" id="btn2" alt="" />
+        </div>
+
+        <div class="rgtsec-body1">
+          <div class="col-md-12">
+            <div
+              class="donut rgt-donut"
+              style="--first: 0.7; --second: 0.43; --third: 0.32"
+            >
+              <div class="donut__slice donut__slice__first"></div>
+              <div class="donut__slice donut__slice__second"></div>
+              <div class="donut__slice donut__slice__third"></div>
+
+              <div class="donut__label">
+                <div class="donut__label__sub">
+                  <img src="img/notification.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 rgtnoti">
+            <div class="row align-items-baseline">
+              <div class="col-md-6">
+                <h6 class="rgt-notification">Notifications</h6>
+              </div>
+              <div class="col-md-6">
+                <div class="notification-count">
+                  <h6>
+                    30<span>
+                      Last 24h <img src="img/arrow-down2.svg" alt=""
+                    /></span>
+                  </h6>
+                </div>
+              </div>
+
+              <div class="col-md-12 p-3">
+                <table>
+                  <tbody class="rgt-ul">
+                    <tr class="mid-ul1">
+                      <td class="td_1">30</td>
+                      <td class="td_2">System Notifications</td>
+                    </tr>
+                    <tr class="mid-ul2">
+                      <td class="td_1">15</td>
+                      <td class="td_2">Attacks & Threats</td>
+                    </tr>
+                    <tr class="mid-ul3">
+                      <td class="td_1">05</td>
+                      <td class="td_2">Trust binary changes</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="col-md-12">
+                  <div class="all-notify">
+                    <button type="button" class="btn all-notify-btn">
+                      All Notifications
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <div class="recent-activity">
+                  <h6 class="rgt-notification">Recent Activity</h6>
+
+                  <ul>
+                    <li class="li-red">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-green">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-red">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <li class="li-green">
+                      <div>
+                        <span>20-12-21 10:30</span>
+                        New binaries gen... MS Win 8
+                        <span>| 192.168.1.1</span>
+                      </div>
+                    </li>
+                    <!-- <li class="li-red">
+                    <div>
+                      <span>20-12-21 10:30</span>
+                      New binaries gen... MS Win 8
+                      <span>| 192.168.1.1</span>
+                    </div>
+                  </li>
+                  <li class="li-green">
+                    <div>
+                      <span>20-12-21 10:30</span>
+                      New binaries gen... MS Win 8
+                      <span>| 192.168.1.1</span>
+                    </div>
+                  </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rgtsec-body2">
+          <div class="rgt-noti">
+            <img src="img/notification.svg" alt="" />
+            <h5>50</h5>
+            <p>Notifications</p>
+          </div>
+
+          <div class="rgt-stats">
+            <p>Last 24 hrs</p>
+            <div class="rgt-sn rgt-stats-li">
+              <h6>30</h6>
+              <lable>System Notifications</lable>
+            </div>
+            <div class="rgt-at rgt-stats-li">
+              <h6>15</h6>
+              <lable>Attacks & Threats</lable>
+            </div>
+            <div class="rgt-tbc rgt-stats-li">
+              <h6>05</h6>
+              <lable>Trust Binary Changes</lable>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-section" id="home">
+      <!-- header start -->
+      <header class="p-3" id="head">
+        <div class="col-md-12">
+          <div class="row head-row">
+            <div class="col-md-7">
+              <div class="searchbar">
+                <!-- <img
+                  id="search"
+                  alt=""
+                  width="18.75px"
+                /> -->
+                <span id="search"></span>
+                <input type="search" placeholder="Search..." />
+                <span id="rgt-arrow"> </span>
+              </div>
+            </div>
+            <!-- head right -->
+            <div class="col-md-5">
+              <div class="head-rgt">
+                <div class="col-md-6 p-0">
+                  <div class="icon_list">
+                    <input type="checkbox" id="ham-menu" />
+                    <label for="ham-menu">
+                      <div class="hide-des">
+                        <img src="img/hamburger.svg" alt="" />
+                      </div>
+                    </label>
+                    <div class="full-page-green"></div>
+                    <div class="ham-menu">
+                      <ul class="nav-list">
+                        <li>
+                          <a data-toggle="collapse" href="#dashboard">
+                            <i class="bx bx-grid-alt"></i>
+                            <span class="links_name">Dashboard</span>
+                          </a>
+                          <div class="collapse" id="dashboard">
+                            <ul class="col-list">
+                              <li class="active">
+                                <a class="" href=""> 360 View</a>
+                              </li>
+                              <li>Risk Assesment</li>
+                              <li>Endpoint Insights</li>
+                              <li>Application Insights</li>
+                              <li>Load Balancing Insights</li>
+                            </ul>
+                          </div>
+                          <!-- <span class="tooltip">Dashboard</span> -->
+                        </li>
+
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-user"></i>
+                            <span class="links_name">Protection</span>
+                          </a>
+                          <!-- <span class="tooltip">Protection</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-chat"></i>
+                            <span class="links_name">Endpoints</span>
+                          </a>
+                          <!-- <span class="tooltip">Messages</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-pie-chart-alt-2"></i>
+                            <span class="links_name">Inventory</span>
+                          </a>
+                          <!-- <span class="tooltip">Analytics</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-folder"></i>
+                            <span class="links_name"
+                              >Notifications and Logs</span
+                            >
+                          </a>
+                          <!-- <span class="tooltip">Files</span> -->
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="bx bx-cart-alt"></i>
+                            <span class="links_name">Integrations</span>
+                          </a>
+                          <!-- <span class="tooltip">Order</span> -->
+                        </li>
+                        <li class="border-0">
+                          <a href="#">
+                            <i class="bx bx-heart"></i>
+                            <span class="links_name">Reports</span>
+                          </a>
+                          <!-- <span class="tooltip">Saved</span> -->
+                        </li>
+
+                        <li class="profile border-0">
+                          <div class="profile-details">
+                            <!--<img src="profile.jpg" alt="profileImg">-->
+                            <div class="copy-right">
+                              <p class="my-5">
+                                <script type="text/javascript">
+                                  var d = new Date();
+                                  yr = d.getFullYear();
+                                  document.write(yr);
+                                </script>
+                                companyname inc
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- <img
+                    src="img/hamburger.svg"
+                    alt=""
+                    class="hamburger-mob hideshow"
+                  /> -->
+                    <ul class="head-logo border-lft border-rgt">
+                      <li id="notify"></li>
+                      <li id="bug"></li>
+                      <li id="setting"></li>
+                      <li id="help"></li>
+                      <li id="sunmoon" onclick="themeChange()"></li>
+                      <li class="hideshow">
+                        <div class="profile">
+                          <div class="dropdown">
+                            <a
+                              class="pro_dpdn"
+                              id="dropdownMenuButton1"
+                              data-toggle="dropdown"
+                              aria-expanded="false"
+                              ><img src="img/user_avtar.svg" alt="" />
+                              <span
+                                >Cameron Williamson<img
+                                  src="img/arrow_down.png"
+                                  alt=""
+                              /></span>
+                            </a>
+                            <ul
+                              class="dropdown-menu"
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              <li>
+                                <a class="dropdown-item" href="#">Action</a>
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Another action</a
+                                >
+                              </li>
+                              <li>
+                                <a class="dropdown-item" href="#"
+                                  >Something else here</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <!-- <i
+              class="fas fa-moon"
+              onclick="themeChange()"
+              id="sunmoon"
+            ></i> -->
+                  </div>
+                </div>
+                <div class="col-md-6 hideshow1 p-0">
+                  <div class="profile">
+                    <ul class="pro-ul">
+                      <li id="user_avtar"></li>
+                      <li>C. Williamson</li>
+                      <li>
+                        <div class="dropdown">
+                          <a
+                            class="pro_dpdn"
+                            id="dropdownMenuButton1"
+                            data-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            <img src="img/arrow_down.png" alt=""
+                          /></a>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <a class="dropdown-item" href="#">Action</a>
+
+                            <a class="dropdown-item" href="#">Another action</a>
+
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="home-body-sec">
+        <div class="container-fluid p-0">
+          <div class="col-md-12" id="main">
+            <div class="row">
+              <div class="col-md-1 p-0">
+                <div class="vertical-breadcrumb">
+                  <div class="col-md-6 breadcrumb-virtical hideshow1">
+                    <a href="index.html"
+                      ><img src=" img/arrow-left.svg" alt=""
+                    /></a>
+                    <h2>Dashboards / 360 View</h2>
+                  </div>
+
+                  <div class="col-md-6 breadcrumb-virtical2 hideshow1">
+                    <a href="dashboard360.html"
+                      ><img src=" img/arrow-left.svg" alt=""
+                    /></a>
+                    <h2>New Devices</h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-11">
+                <div class="newD-body">
+                  <div class="col-md-12">
+                    <div class="newd-breadcrumb">
+                      <div class="col-md-6">
+                        <div class="row">
+                          <nav aria-label="breadcrumb">
+                            <img src="img/newdevice.svg" alt="" />
+                            <div class="bdcmb-lable">
+                              <ol
+                                class="breadcrumb breadcrumb-ol"
+                                id="breadcrumb"
+                              >
+                                <li class="breadcrumb-item">Dashboard</li>
+                                <li class="breadcrumb-item">360 View</li>
+                                <li
+                                  class="breadcrumb-item active"
+                                  aria-current="page"
+                                >
+                                  New Devices
+                                </li>
+                              </ol>
+                              <h2>192.168.1.110</h2>
+                            </div>
+                          </nav>
+                          <div class="lftrgt-btn">
+                            <img src="img/left-btn.svg" alt="" />
+                            <img src="img/right-btn.svg" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="newD-bread-list">
+                          <h2><a href="">Manage all devices</a></h2>
+                          <div class="newD-img-list">
+                            <img src="img/remote.svg" alt="" />
+                            <img src="img/play2.svg" alt="" />
+                            <img src="img/play3.svg" alt="" />
+                            <img src="img/file.svg" alt="" />
+                            <img src="img/dbl-tick.svg" alt="" />
+                            <img src="img/bar.svg" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="sidebar2 open hideshow1" id="sidebar">
+                          <div class="logo-details">
+                            <img
+                              class="bx bx-menu"
+                              src="img/hamburger.svg"
+                              id="btn3"
+                              alt=""
+                            />
+                          </div>
+
+                          <ul class="newd-li">
+                            <li class="active pt-2">
+                              <a href="#">
+                                <span class="links_name"
+                                  >Overview <span class="active-newd-li"></span
+                                ></span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Protection</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Alerts</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Application</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Operating System</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Performance</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Hardware</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Peripherals</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Network Share</span>
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name"
+                                  >Deployment History</span
+                                >
+                              </a>
+                            </li>
+                            <li class="pt-3">
+                              <a href="#">
+                                <span class="links_name">Updates</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="col-md-12">
+                          <div class="row newd-row">
+                            <div class="col-md-3">
+                              <img
+                                class="computer-outline"
+                                src="img/computer-outline.svg"
+                              />
+                            </div>
+                            <div class="col-md-9">
+                              <div class="newd-first-row">
+                                <!-- <ul>
+                                <li>
+                                  <label>Name:</label>
+                                  <h2>BRAVO4</h2>
+                                </li>
+                                <li>
+                                  <label>Domain:</label>
+                                  <h2>BRAVURA</h2>
+                                </li>
+                                <li>
+                                  <label>Type:</label>
+                                  <h2>Desktop</h2>
+                                </li>
+                              </ul> -->
+
+                                <table>
+                                  <tbody>
+                                    <tr>
+                                      <td>Name:</td>
+                                      <th>BRAVO4</th>
+                                    </tr>
+                                    <tr>
+                                      <td>Domain:</td>
+                                      <th>BRAVURA</th>
+                                    </tr>
+                                    <tr>
+                                      <td>Type:</td>
+                                      <th>Desktop</th>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                            <div class="col-md-12 system-details pt-4 pb-4">
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td>Status:</td>
+                                    <th>Online (Connected)</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Last Heartbeat:</td>
+                                    <th>4/26/2019 | 12:58:44 PM</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Heartbeat Interval:</td>
+                                    <th>30 seconds</th>
+                                  </tr>
+                                  <tr>
+                                    <td>AZT deployment:</td>
+                                    <th>15 December 2021</th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-md-12 system-details pt-4 pb-4">
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td>Operating System:</td>
+                                    <th>Windows 10 Enterprise 2016 LTSB</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Platform:</td>
+                                    <th>64-bit</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Public IP:</td>
+                                    <th>50.35.78.119</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Local IP:</td>
+                                    <th>192.168.2.172</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Location:</td>
+                                    <th>Redmond, Washington, US</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Date Added:</td>
+                                    <th>6/23/2017 | 11:27:20 AM</th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-md-12 system-details pt-4 pb-4">
+                              <table class="cpu-details">
+                                <tbody>
+                                  <tr>
+                                    <td>CPU:</td>
+                                    <th>Intel Core i7-5829K 3.30GHz</th>
+                                  </tr>
+                                  <tr>
+                                    <td>CPU Cores:</td>
+                                    <th>32 Cores</th>
+                                  </tr>
+                                  <tr>
+                                    <td>RAM:</td>
+                                    <th>32GB (Corsair VPro DDR4 123mhz)</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Storage:</td>
+                                    <th>10TB (Western Digital)</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Storage Type:</td>
+                                    <th>SSD</th>
+                                  </tr>
+                                  <tr>
+                                    <td>GPU:</td>
+                                    <th>ATI Radeon XYZZZ</th>
+                                  </tr>
+                                  <tr>
+                                    <td>GPU Onboard:</td>
+                                    <th>32 GB</th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="col-md-12 pt-4 pb-4">
+                              <h1>AZT Settings</h1>
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <td>Device Group:</td>
+                                    <th>AZT Default Device Group</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Device Policy:</td>
+                                    <th>AZT Default Policy</th>
+                                  </tr>
+                                  <tr>
+                                    <td>Authorised Apps:</td>
+                                    <th>10/195</th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="risk-status">
+                          <div class="row">
+                            <!-- <div class="col-md-12 pb-5 pt-5">
+                            <img src="img/risk-status.svg" alt="" />
+                          </div> -->
+                            <div class="col-md-12">
+                              <div class="risk-score">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <div
+                                      class="donut"
+                                      style="
+                                        --first: 0.7;
+                                        --second: 0.43;
+                                        --third: 0.32;
+                                      "
+                                    >
+                                      <div
+                                        class="donut__slice donut__slice__first"
+                                      ></div>
+                                      <div
+                                        class="donut__slice donut__slice__second"
+                                      ></div>
+
+                                      <div class="donut__label">
+                                        <div class="donut__label__sub">
+                                          <h2>50</h2>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <label for="">Risk Score</label>
+                                    <h2>MEDIUM</h2>
+                                    <p class="risk-sp1">
+                                      This device may easily become a
+                                      vulnerability.
+                                    </p>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <p class="risk-sp2">
+                                      TIP: Uninstall unauthorized applications
+                                      and ensure that only authorized
+                                      applications are deployed.
+                                      <a href="">Learn more...</a>
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="box">
+                                <h2>
+                                  Threats <br />
+                                  Prevented
+                                </h2>
+                                <p>180</p>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="box">
+                                <h2>Applications</h2>
+
+                                <div
+                                  class="donut risk-donut"
+                                  style="
+                                    --first: 0.7;
+                                    --second: 0.43;
+                                    --third: 0.32;
+                                  "
+                                >
+                                  <div
+                                    class="donut__slice donut__slice__first"
+                                  ></div>
+                                  <div
+                                    class="donut__slice donut__slice__second"
+                                  ></div>
+                                  <div
+                                    class="donut__slice donut__slice__third"
+                                  ></div>
+
+                                  <div class="donut__label">
+                                    <div class="donut__label__sub">
+                                      <h2>196</h2>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                  <ul class="mid-ul">
+                                    <li class="mid-ul1">
+                                      200 <span>Vulnerable</span>
+                                    </li>
+                                    <li class="mid-ul3">
+                                      10 <span>Unauthorized</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-12 pb-5 pt-5">
+                              <h2 class="performance">Performance</h2>
+
+                              <div class="performance-list">
+                                <label for="">CPU usage:</label>
+                                <h3>30%</h3>
+                              </div>
+                              <div class="progress" id="cpu">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 23%"
+                                  aria-valuenow="23"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+
+                              <div class="performance-list">
+                                <label for="">RAM:</label>
+                                <h3>23.27GB (free) / 32 GB</h3>
+                              </div>
+                              <div class="progress" id="ram">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 60%"
+                                  aria-valuenow="60"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                              <div class="performance-list">
+                                <label for="">CPU usage:</label>
+                                <h3>2.12 TB (free) / 10 TB</h3>
+                              </div>
+                              <div class="progress" id="usage">
+                                <div
+                                  class="progress-bar"
+                                  role="progressbar"
+                                  style="width: 60%"
+                                  aria-valuenow="60"
+                                  aria-valuemin="0"
+                                  aria-valuemax="100"
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- script start here -->
+    <script src="js/sidebar.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/newd-donutchart.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="js/dragAndDrop.js"></script>
+    <script src="js/sidebar-rgt.js"></script>
+  </body>
+</html>

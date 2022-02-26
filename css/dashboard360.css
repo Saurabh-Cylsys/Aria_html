@@ -1,0 +1,55 @@
+/* .newD {
+  padding: 0 30px 0 0px;
+} */
+
+.newD .add-devices {
+  margin: 0 2px;
+}
+
+.newD .newd-breadcrumb {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 17px 0;
+
+  margin: 6px 3px;
+}
+
+.newD-bread-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.newD-bread-list h2 {
+  padding: 0 20px;
+}
+
+.newD-bread-list h2 a {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+
+  /* additional blue */
+
+  color: #008dd1;
+}
+
+.newD-body {
+  position: relative;
+  left: -50px;
+  width: 104%;
+}
+
+.lftrgt-btn {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  left: 25px;
+}
+.lftrgt-btn img {
+  margin: 0 3px;
+}
